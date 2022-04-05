@@ -1,4 +1,11 @@
 [class*="col"]{
+<<<<<<< HEAD
     border: 1px solid blueviolet;
     background-color: pink;
 }
+=======
+    border: 1px solid black;
+    background-color: aqua;
+}
+
+>>>>>>> be4088ea1b47b1349a73259ab2b1a3536ef69d0d
