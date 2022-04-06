@@ -1,5 +1,20 @@
 [class*="col"]{
     border: 1px solid blueviolet;
     background-color: pink;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-fluid {
+    background-color: greenyellow;
+}
+
+body { 
+    background-color: lightgreen;
+}
+
+img{
+    float: left;
+    height: 80px;
+    margin: 10px;
 }
 
