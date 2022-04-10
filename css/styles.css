@@ -1,11 +1,11 @@
 [class*="col"]{
-    border: 1px solid blueviolet;
+    /*border: 1px solid blueviolet;*/
     background-color: pink;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container-fluid {
-    background-color: greenyellow;
+    background-color: white;
 }
 
 body { 
@@ -17,4 +17,8 @@ img{
     height: 80px;
     margin: 10px;
 }
-
+.headline{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
