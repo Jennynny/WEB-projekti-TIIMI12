@@ -47,7 +47,6 @@ function reload(){
     answer.addEventListener("keypress", buttonCheckDisabled);
     buttoncheck.addEventListener("click", checkAnswer);
     buttoncheck.addEventListener("click", buttonNextDisabled);
-
     console.log("refreshed");
 }
 
