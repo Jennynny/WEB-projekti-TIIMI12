@@ -1,4 +1,8 @@
 
+/* Oman visailun fontti*/
+@import url("'https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto+Mono&display=swap'");
+
+
 *{
      margin:0;
      padding: 0;
@@ -16,6 +20,8 @@
  
  
  .container-md{
+     font-family: "Fontdiner swanky";
+     font-size: 25px;
      width: 60vw;
      max-width: 100%;
      background-color: #ff9933;
