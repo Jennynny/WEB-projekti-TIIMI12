@@ -30,7 +30,7 @@ let questions = [
         ]
     },
     {
-        question: "2. Mikä näistä on yksi Tylypahkan tupa?",
+        question: "2. Mikä näistä on yksi Tylypahkan neljästä tuvasta?",
         answers: [
             {option:"Kissankäpälä", answer:false},
             {option:"Huhhuhhuh", answer:false},
@@ -258,7 +258,8 @@ function submit() {
 
     questionText.innerHTML = reply;
     if(score <= 4) {
-        questionText.innerHTML = "Harmi, vastasit joihinkin kysymyksiin väärin. Ohessa oikeat vastaukset:"}
+        questionText.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
+                                    + "3. RON JA HERMIONE ovat Harryn parhaat ystävät <br>" + "4. Velhomaailman suosittu urheilulaji on HUISPAUS <br>" + "5. Harryn lemmikki Hedwig on TUNTURIPÖLLÖ"}
         else{ questionText.innerHTML = "Hienoa, kaikki oikein!"}
 
 }

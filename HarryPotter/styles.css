@@ -11,8 +11,8 @@
  #body1 {
      background: rgb(112,70,129);
      background: linear-gradient(to bottom, rgba(112,70,129,1) 19%, rgba(129,24,185,1) 50%, rgba(221,119,241,0.981127485173757) 90%);
-     /*height: 100vh;
-     width: 100vw;
+     /*height: auto;
+     /*width: 100vw;
      display: flex; */
      align-items: center;
      justify-content: center;
@@ -27,7 +27,7 @@
      background-color: #ff9933;
      height: auto;
      padding-top: 10px;
-     box-shadow: 0 0 5px 4 px;
+     /*box-shadow: 0 0 5px 4 px;*/
      display: flex;
      flex-direction: column;
      justify-content: center;
