@@ -18,8 +18,8 @@ body {
 
 i{
     float: left;
-    height: 80px;
-    margin: 0;
+    height: auto;
+    margin: 20px;
     color: orange;
     position: relative;
 
@@ -29,5 +29,6 @@ i{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 
 
