@@ -272,20 +272,18 @@ function submit() {
         else{ 
         restartBtn.classList.add("hide");
 
-            let x = document.createElement("IMG");
-        x.setAttribute("src", "images/tylypahka.jpg");
-        x.setAttribute("width", "auto");
-        x.setAttribute("height", "auto");
-        x.setAttribute("alt", "Tylypahka");
-        document.body.appendChild(x);
-            
+        let pic = document.createElement("IMG");
+        pic.setAttribute("src", "images/tylypahka.jpg");
+        pic.setAttribute("width", "auto");
+        pic.setAttribute("height", "auto");
+        pic.setAttribute("alt", "Tylypahka");
+
             questionText.innerHTML = "Hienoa, kaikki oikein!"; 
-            document.getElementById("picture").innerHTML = x;}
+            document.getElementById("picture").appendChild(pic);}
 
 }
-
+//Vastaukset nappulan toiminto
 function showResults() {
-
     submitBtn.addEventListener(click,showResults);
 
 }
