@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="historia.css">
 </head>
 <body>
 
@@ -50,8 +51,51 @@
     </div>
   </nav>
 
+  <!--Visailut-->
+  <div class="quiz-container">
+    <h2> Kuka seuraavista oli faarao?</h2><hr>
+    <input type="radio" name="question1">Horus<br>
+    <input type="radio" name="question1">Nefertum<br>
+    <input type="radio" name="question1">Sekhmet<br>
+    <input type="radio" name="question1" id="correct1">Ramses<br>
+    <button class="next" onclick="next(1)">Seuraava</button>
+</div>
 
-  <!--tähän väliin tulee jotakin järkevää joskus-->
+<div class="quiz-container">
+    <h2> Minkä niminen oli muinais egyptin auringonjumala?</h2><hr>
+    <input type="radio" name="question2" >Amon<br>
+    <input type="radio" name="question2" id="correct2">Ra<br>
+    <input type="radio" name="question2">Osiris<br>
+    <input type="radio" name="question2">Seth<br>
+    <button class="next" onclick="next(2)">Seuraava</button>
+</div>
+
+<div class="quiz-container">
+    <h2> Kuka antiikinkreikan jumalista oli sotataidon, tiedon ja viisauden jumala?</h2><hr>
+    <input type="radio" name="question3" id="correct3">Athene<br>
+    <input type="radio" name="question3" >Afrodite<br>
+    <input type="radio" name="question3">Hera<br>
+    <input type="radio" name="question3">Selene<br>
+    <button class="next" onclick="next(3)">Seuraava</button>
+</div>
+
+<div class="quiz-container">
+    <h2>Tähän vielä yks kysymys?</h2><hr>
+    <input type="radio" name="question4" id="correct4">dii<br>
+    <input type="radio" name="question4" >daa<br>
+    <input type="radio" name="question4">diipadii<br>
+    <input type="radio" name="question4">daapadaa<br>
+    <button class="next" onclick="next(4)">Seuraava</button>
+</div>
+
+<div class="quiz-container">
+    <h2>Mistä olympialaiset ovat lähtöisin?</h2><hr>
+    <input type="radio" name="question5" >Turkista<br>
+    <input type="radio" name="question5">Egyptistä<br>
+    <input type="radio" name="question5">Roomasta<br>
+    <input type="radio" name="question5" id="correct5">Kreikasta<br>
+    <button onclick="result()">Lähetä vastaukset</button>
+</div>
 
    <!-- Add footer -->
    <div class="container">
@@ -69,7 +113,7 @@
   </div>
 
 
-
+<script src="historia.js"></script>
 
  <!--Add Bootstrap Js file-->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
