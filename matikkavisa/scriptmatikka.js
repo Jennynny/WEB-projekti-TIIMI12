@@ -35,19 +35,32 @@ function reload(){
         }
         return document.getElementById("placeOfAnswer").innerHTML= isItRight
     }
-    /*Tyhjentää vastauskentän ja "disabloi painikkeet" */
-    document.getElementById("answer").value="";
-    document.getElementById("answer").disabled =false;
-    document.getElementById("placeOfAnswer").innerHTML="";
-    document.getElementById("buttoncheck").disabled = true;
-    document.getElementById("buttonnext").disabled = true;  
-    /*Tulostaa kertolaskun näkyviin */
-    document.getElementById("question").innerHTML = number1 + " * " + number2;
-    /*Kuuntelija: "disabloi" vastauskentän, tarkistusnappia painamalla checkAnswer funktio suorittetaan ja seuraavanappi */
-    answer.addEventListener("keypress", buttonCheckDisabled);
-    buttoncheck.addEventListener("click", checkAnswer);
-    buttoncheck.addEventListener("click", buttonNextDisabled);
+     /*Laskee kuinka mones kysymys on  ja tulostaa sen sivulle*/
+     numberOfQuestion++;
+     document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
+     /*Ksymyksi kysytään viisi */
+     if (numberOfQuestion <= 5){
+        /*Tyhjentää vastauskentän ja "disabloi painikkeet" */
+        document.getElementById("answer").value="";
+        document.getElementById("answer").disabled =false;
+        document.getElementById("placeOfAnswer").innerHTML="";
+        document.getElementById("buttoncheck").disabled = true;
+        document.getElementById("buttonnext").disabled = true;  
+        /*Tulostaa kertolaskun näkyviin */
+        document.getElementById("question").innerHTML = number1 + " * " + number2;
+        /*Kuuntelija: "disabloi" vastauskentän, tarkistusnappia painamalla checkAnswer funktio suorittetaan ja avaa seuraavanappin */
+        answer.addEventListener("keypress", buttonCheckDisabled);
+        buttoncheck.addEventListener("click", checkAnswer);
+        buttoncheck.addEventListener("click", buttonNextDisabled);
+     }
+     /*Viiden kysymyksen jälkeen kerrotaan lopputulos */
+     else {
+        document.getElementById("placeOfAnswer").innerHTML= "Visa loppui. Pisteesi oli:"
+        document.getElementById("buttoncheck").disabled = true;
+        document.getElementById("buttonnext").disabled = true; 
+     }
     console.log("refreshed");
+    console.log(numberOfQuestion);
 }
 
 /*PÄÄOHJELMA ALKAA TÄSSÄ*/
@@ -56,6 +69,7 @@ function reload(){
 
 /*Tulostaa kysymyksen  */
 
+var numberOfQuestion = 0
 document.getElementById("buttonnext").disabled = false; 
 buttonnext.addEventListener("click", reload);
 

@@ -16,15 +16,26 @@ body {
     background-color: #1DBDE0;
 }
 
-img{
+i{
     float: left;
-    height: 80px;
-    margin: 10px;
+    height: auto;
+    margin: 20px;
+    color: orange;
+    position: relative;
+
 }
 .headline{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.55);
+    border-color: orange;
+}
+.navbar-toggler{
+    border: 2px solid transparent;
+}
+
 
 

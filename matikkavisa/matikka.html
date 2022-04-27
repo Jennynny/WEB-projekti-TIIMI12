@@ -54,44 +54,51 @@
 
    <!--Sisältö-->
    <div class="container">
-       <div class="row">
-           <div id="title" class="col">
-               <h2>Matikkavisa</h2>
-           </div>
-       </div>
-       <div class="row">
-           <div id="questionBox" class="col ">
-               <div class="row">
-                   <div class="col">
-                    <h3>Tehtävä</h3>
-                   </div>
-               </div>
-               <div class="row">
+      <div class="row">
+          <div id="title" class="col">
+              <h2>Matikkavisa</h2>
+          </div>
+      </div>
+      <div class="row">
+          <div id="questionBox" class="col ">
+            <div id="startview" class="row">
+              <div class="col">
+                <h3>Aloita kertolaskuvisa</h3>
+                <button type="button" id="buttonstart" class="btn btn-primary">Aloita</button>
+              </div>
+            </div>
+            <!--Kysymykset-->
+            <div class="row">
                 <div class="col">
-                    <p id="question"></p>    
+                  <h3 id="numberofquestion"></h3>
                 </div>
-               </div>
-               <div class="row">
-                <div class="col">
-                    <form action=""></form>
-                        <label for="answer" class="h3"> Vastaus</label>
-                        <input type="number" id="answer">
-                        <button type="button" id="buttoncheck" class="btn btn-primary" disabled>Tarkista</button>
-                    </form>
-                </div>
-               </div>
-               <div class="row">
-                <div class="col">
-                    <p id="placeOfAnswer"></p>
-                </div>
-               </div>
-               <div class="row">
-                <div class="col">  
-                    <button type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
-                </div>
-               </div>
-           </div>
-       </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <p id="question"></p>    
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <form action=""></form>
+                      <label for="answer" class="h3"> Vastaus</label>
+                      <input type="number" id="answer">
+                      <button type="button" id="buttoncheck" class="btn btn-primary" disabled>Tarkista</button>
+                  </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <p id="placeOfAnswer"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">  
+                  <button type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
+              </div>
+            </div>
+        </div>
+      </div>
        <div class="row"></div>
 
    </div>
