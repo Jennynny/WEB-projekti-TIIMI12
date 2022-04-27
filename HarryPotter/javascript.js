@@ -8,6 +8,7 @@ const restartBtn = document.getElementById("restart");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const submitBtn = document.getElementById("submit");
+const mainMenuBtn = document.getElementById("mainmenu");
 const trueBtn = document.getElementById("True");
 const false1Btn = document.getElementById("False1");
 const false2Btn = document.getElementById("False2");
@@ -70,6 +71,7 @@ restartBtn.addEventListener("click", restart);
 prevBtn.addEventListener("click", prev);
 nextBtn.addEventListener("click", next);
 submitBtn.addEventListener("click", submit);
+mainMenuBtn.addEventListener("click", main);
 
 
 //Aloitetaan kysely
@@ -118,6 +120,7 @@ function beginQuiz(){
     }
     prevBtn.classList.add("hide");
     submitBtn.classList.add("hide"); //piilotettu vastausnappula
+    mainMenuBtn.classList.add("hide");
 
     }
 
@@ -255,14 +258,20 @@ function submit() {
     trueBtn.classList.add("hide");
     false1Btn.classList.add("hide");
     false2Btn.classList.add("hide");
+    mainMenuBtn.classList.remove("hide");
+
 
     //Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
 
     questionText.innerHTML = reply;
+
     if(score <= 4) {
+
         questionText.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
                                     + "3. RON JA HERMIONE ovat Harryn parhaat ystävät <br>" + "4. Velhomaailman suosittu urheilulaji on HUISPAUS <br>" + "5. Harryn lemmikki Hedwig on TUNTURIPÖLLÖ"}
         else{ 
+        restartBtn.classList.add("hide");
+
             let x = document.createElement("IMG");
         x.setAttribute("src", "images/tylypahka.jpg");
         x.setAttribute("width", "auto");
@@ -270,7 +279,8 @@ function submit() {
         x.setAttribute("alt", "Tylypahka");
         document.body.appendChild(x);
             
-            questionText.innerHTML = "Hienoa, kaikki oikein!"; }
+            questionText.innerHTML = "Hienoa, kaikki oikein!"; 
+            document.getElementById("picture").innerHTML = x;}
 
 }
 
@@ -279,4 +289,10 @@ function showResults() {
     submitBtn.addEventListener(click,showResults);
 
 }
+
+//Päävalikko-nappulan toiminto
+function main() {
+    location.href="../index.html";
+}
+
 
