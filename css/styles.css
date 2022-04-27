@@ -29,5 +29,12 @@ i{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.55);
+    border-color: orange;
+}
+.navbar-toggler{
+    border: 2px solid transparent;
+}
 
 
