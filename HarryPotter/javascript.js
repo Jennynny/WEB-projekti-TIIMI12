@@ -1,6 +1,8 @@
-//* Koodi poimituu sivutolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja osittain muokattu tehtävän vaatimuksiin sopivaksi.
+//Jonna Neulikko
 
-//*Vakioidaan painikkeet
+//Koodi poimituu sivutolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja muokattu tehtävän vaatimuksiin sopivaksi.
+
+//Vakioidaan elementit
 
 const restartBtn = document.getElementById("restart");
 const prevBtn = document.getElementById("prev");
@@ -14,12 +16,12 @@ const totalScore = document.getElementById("total-score");
 const questionText = document.getElementById("question-text");
 
 
-//* Asetetaan arvot kysymysten ja pisteiden määrälle
+//Asetetaan lähtöarvot kysymysten ja pisteiden määrälle
 let currentQuestion = 0;
 let score = 0;
 
 
-//*Luodaan kysymykset ja vastaukset
+//Luodaan kysymykset ja vastaukset
 let questions = [
     {
         question: "1. Minkä muotoinen on Harryn otsassa oleva arpi?",
@@ -63,14 +65,14 @@ let questions = [
     }
 ]
 
-//*Luodaan painikkeiden toiminnot (kutsuu funtiota kun painiketta painetaan)
+//Luodaan painikkeiden toiminnot (kutsuu funtiota kun painiketta painetaan)
 restartBtn.addEventListener("click", restart);
 prevBtn.addEventListener("click", prev);
 nextBtn.addEventListener("click", next);
 submitBtn.addEventListener("click", submit);
 
 
-//*Aloitetaan kysely
+//Aloitetaan kysely
 function beginQuiz(){
     currentQuestion = 0;
     totalScore.innerHTML = questions.length;
@@ -78,7 +80,7 @@ function beginQuiz(){
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
     trueBtn.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
-            if(score < 6) { 
+            if(score < 5) { 
                 score++;
             }
         }
@@ -91,7 +93,7 @@ function beginQuiz(){
     false1Btn.innerHTML = questions[currentQuestion].answers[1].option;
     false1Btn.onclick = () => {
         if(questions[currentQuestion].answers[1].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -105,7 +107,7 @@ function beginQuiz(){
     false2Btn.innerHTML = questions[currentQuestion].answers[2].option;
     false2Btn.onclick = () => {
         if(questions[currentQuestion].answers[2].answer){
-            if(score < 6) { 
+            if(score < 5) { 
                 score++;
             }
         }
@@ -115,7 +117,7 @@ function beginQuiz(){
         }
     }
     prevBtn.classList.add("hide");
-    submitBtn.classList.add("hide"); //*piilotettu vastausnappula
+    submitBtn.classList.add("hide"); //piilotettu vastausnappula
 
     }
 
@@ -137,7 +139,7 @@ function restart(){
     beginQuiz();
 }
 
-//* Seuraava kysymysnappula > poistaa nappulan viimeisen kysymyksen kohdalla
+//Seuraava kysymysnappula > poistaa nappulan viimeisen kysymyksen kohdalla
 function next(){
     currentQuestion++;
     if(currentQuestion >= 5){
@@ -150,7 +152,7 @@ function next(){
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
     trueBtn.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -162,7 +164,7 @@ function next(){
     false1Btn.innerHTML = questions[currentQuestion].answers[1].option;
     false1Btn.onclick = () => {
         if(questions[currentQuestion].answers[1].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -176,7 +178,7 @@ function next(){
     false2Btn.innerHTML = questions[currentQuestion].answers[2].option;
     false2Btn.onclick = () => {
         if(questions[currentQuestion].answers[2].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -189,7 +191,7 @@ function next(){
 
 }
 
-//*Edellinen kysymys nappulan toiminto
+//Edellinen kysymys nappulan toiminto
 function prev() {
     currentQuestion--;
     if(currentQuestion <= 0) {
@@ -202,7 +204,7 @@ function prev() {
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
     trueBtn.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -215,7 +217,7 @@ function prev() {
     false1Btn.innerHTML = questions[currentQuestion].answers[1].option;
     false1Btn.onclick = () => {
         if(questions[currentQuestion].answers[1].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -228,7 +230,7 @@ function prev() {
     false2Btn.innerHTML = questions[currentQuestion].answers[2].option;
     false2Btn.onclick = () => {
         if(questions[currentQuestion].answers[2].answer){
-            if(score < 6) {
+            if(score < 5) {
                 score++;
             }
         }
@@ -242,7 +244,7 @@ function prev() {
 
 }
 
-//* Vastaukset nappulan toiminto
+// Vastaukset nappulan toiminto
 function submit() {
 
     let reply = ""
@@ -254,13 +256,21 @@ function submit() {
     false1Btn.classList.add("hide");
     false2Btn.classList.add("hide");
 
-    //* Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
+    //Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
 
     questionText.innerHTML = reply;
     if(score <= 4) {
         questionText.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
                                     + "3. RON JA HERMIONE ovat Harryn parhaat ystävät <br>" + "4. Velhomaailman suosittu urheilulaji on HUISPAUS <br>" + "5. Harryn lemmikki Hedwig on TUNTURIPÖLLÖ"}
-        else{ questionText.innerHTML = "Hienoa, kaikki oikein!"}
+        else{ 
+            let x = document.createElement("IMG");
+        x.setAttribute("src", "images/tylypahka.jpg");
+        x.setAttribute("width", "auto");
+        x.setAttribute("height", "auto");
+        x.setAttribute("alt", "Tylypahka");
+        document.body.appendChild(x);
+            
+            questionText.innerHTML = "Hienoa, kaikki oikein!"; }
 
 }
 
