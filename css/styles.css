@@ -18,8 +18,8 @@ body {
 
 i{
     float: left;
-    height: 80px;
-    margin: 0;
+    height: auto;
+    margin: 20px;
     color: orange;
     position: relative;
 
@@ -36,5 +36,6 @@ i{
 .navbar-toggler{
     border: 2px solid transparent;
 }
+
 
 
