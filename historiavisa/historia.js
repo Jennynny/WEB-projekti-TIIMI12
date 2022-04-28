@@ -26,3 +26,19 @@ function result() {
     }  
     alert("your score is: "+ score);
 }
+
+//oikeat vastauskset
+function v01(){
+let correct1 = document.getElementById("correct1");
+let false1= document.getElementById("false1");
+let false2 = document.getElementById("false2");
+let false3 = document.getElementById("false3");
+let false4 = document.getElementById("false4");
+
+if (correct1){
+    document.getElementById("rightAnswer").html = correct1 + "Hienoa! Oikea vastaus.";
+}
+else {
+    document.getElementById("rightAnswer").html = false1+ false2 + false3+ false4 + "Harmi väärin meni. Oikea vastaus on Ramses";
+}
+}
