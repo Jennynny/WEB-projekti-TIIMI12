@@ -5,7 +5,7 @@
 }
 
 h1 {
-    color: orange;
+    color: #ffa500;
     font-family: 'Titan One', cursive;
 }
 
@@ -36,6 +36,12 @@ i{
 .navbar-toggler{
     border: 2px solid transparent;
 }
+
+.bottom-left {
+    position: relative;
+    bottom: 30px;
+    left: 16px;
+  }
 
 
 
