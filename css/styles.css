@@ -5,7 +5,7 @@
 }
 
 h1 {
-    color: orange;
+    color: #ffa500;
     font-family: 'Titan One', cursive;
 }
 
@@ -38,8 +38,8 @@ i{
 }
 
 .bottom-left {
-    position: absolute;
-    bottom: 8px;
+    position: relative;
+    bottom: 30px;
     left: 16px;
   }
 

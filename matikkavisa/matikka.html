@@ -17,88 +17,90 @@
       <!-- Header-->
   <div class = "headline">
     <h1 class="mt-5">Visailuja viitosluokkalaisille</h1>
-    </div>
+  </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid d-flex">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../images/iconit/2x/outline_home_black_24dp.png" alt=""class="d-inline-block align-text-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills nav-fill">
-            <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="../index.html">Home</a> 
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="../infosivu.html">Infosivu</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="matikka.html">Matikkavisa</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Aila-Maria</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="../Harry Potter -tietovisa/index.html">Jonna</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="../Maantietovisa/maantieto.html">Maantieto</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid d-flex">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../images/iconit/2x/outline_home_black_24dp.png" alt=""class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills nav-fill">
+          <li class="nav-item mx-3">
+            <a class="nav-link" aria-current="page" href="../index.html">Home</a> 
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../infosivu.html">Infosivu</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="matikka.html">Matikkavisa</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="#">Aila-Maria</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../Harry Potter -tietovisa/index.html">Jonna</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../Maantietovisa/maantieto.html">Maantieto</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-   <!--Sisältö-->
-   <div class="container">
+  <!--Sisältö-->
+  <div class="container">
+    <div class="row">
+      <div id="title" class="col">
+        <h2>Matikkavisa</h2>
+      </div>
+    </div>
       <div class="row">
-          <div id="title" class="col">
-              <h2>Matikkavisa</h2>
+        <div id="questionBox" class="col ">
+          <!--Aloitus dia-->
+          <div id="startview" class="row">
+            <div class="col">
+              <h3>Aloita kertolaskuvisa</h3>
+              <button type="button" id="buttonstart" class="btn btn-primary">Aloita</button>
+            </div>
+          </div>
+          <!--Kysymykset-->
+          <div id="quesionview">
+          <div class="row">
+              <div class="col">
+                <h3 id="numberofquestion"></h3>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <p id="question"></p>    
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <form action=""></form>
+                    <label for="answer" class="h3"> Vastaus</label>
+                    <input type="number" id="answer">
+                    <button type="button" id="buttoncheck" class="btn btn-primary" disabled>Tarkista</button>
+                </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <p id="placeOfAnswer"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">  
+                <button type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
+            </div>
           </div>
       </div>
-      <div class="row">
-          <div id="questionBox" class="col ">
-            <!--Aloitus dia-->
-            <div id="startview" class="row">
-              <div class="col">
-                <h3>Aloita kertolaskuvisa</h3>
-                <button type="button" id="buttonstart" class="btn btn-primary">Aloita</button>
-              </div>
-            </div>
-            <!--Kysymykset-->
-            <div class="row">
-                <div class="col">
-                  <h3 id="numberofquestion"></h3>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                  <p id="question"></p>    
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                  <form action=""></form>
-                      <label for="answer" class="h3"> Vastaus</label>
-                      <input type="number" id="answer">
-                      <button type="button" id="buttoncheck" class="btn btn-primary" disabled>Tarkista</button>
-                  </form>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                  <p id="placeOfAnswer"></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">  
-                  <button type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
-              </div>
-            </div>
-        </div>
+      </div>
       </div>
        <div class="row"></div>
 

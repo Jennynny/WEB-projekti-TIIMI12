@@ -8,14 +8,24 @@ function getRndInteger(min, max) {
 }
 
 /*Tarkistusnapin käyttöön otto */
-function buttonCheckDisabled() {
+function buttonCheckActivation() {
     document.getElementById("buttoncheck").disabled = false;
+       
+}
+/*Tarkistusnapin disablointi */
+function buttonCheckDisabled() {
+    document.getElementById("buttoncheck").disabled = true;
        
 }
 /*Seuraavanapin käyttöön otto ja vastauskentän "disablointi"*/
 function buttonNextDisabled() {
     document.getElementById("buttonnext").disabled = false;  
     document.getElementById("answer").disabled =true;   
+}
+
+/*Laskee visasta saadu pisteet*/
+function calculationOfPoint(){
+
 }
 
 /*Funktio arpoo kertolaskun numeror, tarkistaa onko käyttäjän syöttämä arvo oikein. Funktio operoi nappeja vastauskenttää  */
@@ -38,6 +48,7 @@ function reload(){
      /*Laskee kuinka mones kysymys on  ja tulostaa sen sivulle*/
      numberOfQuestion++;
      document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
+
      /*Ksymyksi kysytään viisi */
      if (numberOfQuestion <= 5){
         /*Tyhjentää vastauskentän ja "disabloi painikkeet" */
@@ -49,7 +60,8 @@ function reload(){
         /*Tulostaa kertolaskun näkyviin */
         document.getElementById("question").innerHTML = number1 + " * " + number2;
         /*Kuuntelija: "disabloi" vastauskentän, tarkistusnappia painamalla checkAnswer funktio suorittetaan ja avaa seuraavanappin */
-        answer.addEventListener("keypress", buttonCheckDisabled);
+        answer.addEventListener("keypress", buttonCheckActivation);
+        buttoncheck.addEventListener("click", buttonCheckDisabled);
         buttoncheck.addEventListener("click", checkAnswer);
         buttoncheck.addEventListener("click", buttonNextDisabled);
      }
@@ -61,16 +73,23 @@ function reload(){
      }
     console.log("refreshed");
     console.log(numberOfQuestion);
+    console.log(answer);
+    console.log(answer1);
 }
 
 /*PÄÄOHJELMA ALKAA TÄSSÄ*/
-/*Aloitus sivu */
 
-
+/*Aloitus sivu näkyvissä ja painaa aloitusnappia, niin kysymykset tulee esiin*/
+document.getElementById('startview').style.display='block';
+document.getElementById("quesionview").style.display='none';
+document.getElementById("buttonstart").onclick=function(){
+    document.getElementById("startview").style.display='none';
+    document.getElementById("quesionview").style.display='block';
+}
 /*Tulostaa kysymyksen  */
-
 var numberOfQuestion = 0
 document.getElementById("buttonnext").disabled = false; 
 buttonnext.addEventListener("click", reload);
+
 
 
