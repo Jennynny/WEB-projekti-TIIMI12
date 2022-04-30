@@ -53,6 +53,42 @@
     </div>
   </nav>
  
+  <div class="container rounded-start rounded end">
+    <!-- <div class="p-3 mb-2 bg-info">-->
+     <div class="question-number"> <!--Monesko kysymys menossa-->
+         <h3>Kysymys <span class="question-num-value"></span> / 
+             <span class="total-questions"></span>
+         </h3>
+     </div>
+     <div class="question"> 
+     </div>
+     
+     <div class="options"> <!--vastausvaihtoehdot-->
+         <div id="0" class="option1" onclick="check(this)"></div>
+         <div id="1" class="option2" onclick="check(this)"></div>
+         <div id="2" class="option3" onclick="check(this)"></div>
+         <div id="3" class="option4" onclick="check(this)"></div>
+     </div>
+
+     <div class="button btn d-grid gap-1 col-6 mx-auto"> <!--visa etenee eteenpäin napilla. Vaatii vastauksen mennäkseen eteenpäin-->
+         <button type="button" onclick="next()" class="btn btn-warning">Seuraava</button>
+     </div>
+
+     <div class="answers-tracker"> <!--näyttää oikeiden ja väärin vastauksen alareunassa-->
+     </div>
+ </div>
+
+ <div class="quiz-over">
+     <div class="box"> <!--Box ilmestyy kun visa ohi. Ilmoittaa montako meni oikein kaikista kysymyksistä ja monta % oikein. Lopussa Aloita alusta näppäin-->
+         <div> <h1 id = "teksti"></h1> </div> <br /> <!--<h1>Hienosti meni!</h1> tämä otettu pois div sisältä-->
+            <h3> Sait <span class="correct-answers"></span> / 
+             <span class="total-questions2"></span> oikeita vastauksia. <br>
+             Se on <span class="percentage"> </span> oikein. <br>
+             ..
+             </h3>
+        <div> <button type="button" class="btn btn-warning btn-lg mt-3" onclick="tryAgain()">Aloita alusta!</button> </div>
+     </div>
+ </div>
  
 
 
@@ -73,7 +109,7 @@
 
 
 
-
+  <script src="maantieto.js"></script>
  <!--Add Bootstrap Js file-->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
