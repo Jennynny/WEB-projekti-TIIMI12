@@ -30,27 +30,28 @@ function calculationOfPoint(){
 
 /*Funktio arpoo kertolaskun numeror, tarkistaa onko käyttäjän syöttämä arvo oikein. Funktio operoi nappeja vastauskenttää  */
 function reload(){
-    let number1 = getRndInteger(1,10);
-    let number2 = getRndInteger(1,10);
-    /*Funktio tarkistaa onko vastauksen syöttämä arvo oikein vai väärin ja tulostaa tämän tiedon */
-    function checkAnswer(){
-        let answer = Number(document.getElementById("answer").value);
-        let task = number1*number2;
-        let isItRight=""
-        if (answer == task){
-            isItRight= "Vastaus on oikein";
-        }
-        else{
-            isItRight="Vastaus on väärin. <br> Oikea vastaus on "+ task;
-        }
-        return document.getElementById("placeOfAnswer").innerHTML= isItRight
-    }
-     /*Laskee kuinka mones kysymys on  ja tulostaa sen sivulle*/
+     /*Laskee kuinka mones kysymys on ja tulostaa sen sivulle*/
      numberOfQuestion++;
      document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
 
      /*Ksymyksi kysytään viisi */
      if (numberOfQuestion <= 5){
+        var number1 = getRndInteger(1,10);
+        var number2 = getRndInteger(1,10);
+        var answerUser = Number(document.getElementById("answer").value);
+        var task = number1*number2;
+        /*Funktio tarkistaa onko käyttäjän syöttämä arvo oikein vai väärin ja palauttaa tämän tiedon */
+        function checkAnswer(){
+            let task = number1*number2;
+            let isItRight=""
+            if (answer == task){
+                isItRight= "Vastaus on oikein";
+            }
+            else{
+                isItRight="Vastaus on väärin. <br> Oikea vastaus on "+ task;
+            }
+            return document.getElementById("placeOfAnswer").innerHTML= isItRight
+        }
         /*Tyhjentää vastauskentän ja "disabloi painikkeet" */
         document.getElementById("answer").value="";
         document.getElementById("answer").disabled =false;
@@ -64,6 +65,7 @@ function reload(){
         buttoncheck.addEventListener("click", buttonCheckDisabled);
         buttoncheck.addEventListener("click", checkAnswer);
         buttoncheck.addEventListener("click", buttonNextDisabled);
+        
      }
      /*Viiden kysymyksen jälkeen kerrotaan lopputulos */
      else {
@@ -73,10 +75,25 @@ function reload(){
      }
     console.log("refreshed");
     console.log(numberOfQuestion);
-    console.log(answer);
-    console.log(answer1);
+    console.log(answerUser);
+    objectOne = {
+        numberOne: number1,
+        numberTwo: number2,
+        answerUserObject: answerUser,
+        taskObject: task
+     }
+     console.log(objectOne);
+
 }
 
+ /*Funktio tallentaa olioon number1, number2, aswerUser ja taskin joka kysymksen jälkeen  */
+    /*Kysymysten jälkeen tulostaa sivulla taulukon, jossa näkyy kysymykset ja vastasitko käyttäjä oikein */
+/*let objectOne1= objectOne;
+function objectTable(){
+    objectList.push(objectOne1);
+    console.log(objectList);
+}
+objectTable()
 /*PÄÄOHJELMA ALKAA TÄSSÄ*/
 
 /*Aloitus sivu näkyvissä ja painaa aloitusnappia, niin kysymykset tulee esiin*/
@@ -86,10 +103,13 @@ document.getElementById("buttonstart").onclick=function(){
     document.getElementById("startview").style.display='none';
     document.getElementById("quesionview").style.display='block';
 }
+buttonstart.addEventListener("click", reload);
 /*Tulostaa kysymyksen  */
+var objectList = [];
+var objectOne = []
 var numberOfQuestion = 0
-document.getElementById("buttonnext").disabled = false; 
 buttonnext.addEventListener("click", reload);
+
 
 
 
