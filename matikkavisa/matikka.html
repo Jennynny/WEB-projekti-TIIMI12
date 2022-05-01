@@ -55,14 +55,14 @@
   <!--Sisältö-->
   <div class="container">
     <div class="row">
-      <div id="title" class="col">
-        <h2>Matikkavisa</h2>
+      <div id="title" class="col ">
+        <h2 class="text-center">Matikkavisa</h2>
       </div>
     </div>
       <div class="row">
         <div id="questionBox" class="col ">
           <!--Aloitus dia-->
-          <div id="startview" class="row">
+          <div id="startview" class="row text-center">
             <div class="col">
               <h3>Aloita kertolaskuvisa</h3>
               <button type="button" id="buttonstart" class="btn btn-primary">Aloita</button>
@@ -72,34 +72,40 @@
           <div id="quesionview">
           <div class="row">
               <div class="col">
-                <h3 id="numberofquestion"></h3>
+                <h3 id="numberofquestion" class="text-center"></h3>
               </div>
           </div>
           <div class="row">
-            <div class="col">
-                <p id="question"></p>    
+            
+            <div class="col-sm-6 h4">
+                <p id="question" class="text-md-end text-sm-center"></p>    
+            </div>
+          
+            <div id= "inputplace" class="col-sm-6 text-md-start text-sm-center">
+                <input type="number" id="answer" min="1" max="3">
+                <button onclick = "checkAnswer(task)" type="button" id="buttoncheck" class="btn btn-outline-dark" disabled>Tarkista</button>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div id="placeOfAnswerCol" class="col">
+                <p id="placeOfAnswer" class="text-center h5"></p>
             </div>
           </div>
           <div class="row">
-            <div class="col">
-                <form action=""></form>
-                    <label for="answer" class="h3"> Vastaus</label>
-                    <input type="number" id="answer">
-                    <button type="button" id="buttoncheck" class="btn btn-primary" disabled>Tarkista</button>
-                </form>
+            <div class="col text-center">  
+                <button onclick = "reload()" type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
             </div>
-          </div>
-          <div class="row">
-            <div class="col">
-                <p id="placeOfAnswer"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">  
-                <button type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
-            </div>
+            
           </div>
       </div>
+      <div id ="scoreview" class="row text-center">
+        <div class="col">
+        </div>
+      </div>
+      <div id="scorebutton" class="col text-center">  
+        <button onclick = "showScore()" id="scorebutton2" type="button"  class="btn btn-primary" disabled>Näytä pisteet</button>
+    </div>
       </div>
       </div>
        <div class="row"></div>

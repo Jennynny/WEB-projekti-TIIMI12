@@ -23,93 +23,100 @@ function buttonNextDisabled() {
     document.getElementById("answer").disabled =true;   
 }
 
-/*Laskee visasta saadu pisteet*/
-function calculationOfPoint(){
 
+//Funktio syöttää kysymyksen näytölle ja vastaus lomakeaktivoituu
+function questionInput (number1, number2){
+    document.getElementById("question").innerHTML= number1 + " ∙ " + number2 + " =";
+    answer.addEventListener("keypress", buttonCheckActivation); 
 }
 
-/*Funktio arpoo kertolaskun numeror, tarkistaa onko käyttäjän syöttämä arvo oikein. Funktio operoi nappeja vastauskenttää  */
-function reload(){
-     /*Laskee kuinka mones kysymys on ja tulostaa sen sivulle*/
-     numberOfQuestion++;
-     document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
-
-     /*Ksymyksi kysytään viisi */
-     if (numberOfQuestion <= 5){
-        var number1 = getRndInteger(1,10);
-        var number2 = getRndInteger(1,10);
-        var answerUser = Number(document.getElementById("answer").value);
-        var task = number1*number2;
-        /*Funktio tarkistaa onko käyttäjän syöttämä arvo oikein vai väärin ja palauttaa tämän tiedon */
-        function checkAnswer(){
-            let task = number1*number2;
-            let isItRight=""
-            if (answer == task){
-                isItRight= "Vastaus on oikein";
-            }
-            else{
-                isItRight="Vastaus on väärin. <br> Oikea vastaus on "+ task;
-            }
-            return document.getElementById("placeOfAnswer").innerHTML= isItRight
-        }
-        /*Tyhjentää vastauskentän ja "disabloi painikkeet" */
-        document.getElementById("answer").value="";
-        document.getElementById("answer").disabled =false;
-        document.getElementById("placeOfAnswer").innerHTML="";
-        document.getElementById("buttoncheck").disabled = true;
-        document.getElementById("buttonnext").disabled = true;  
-        /*Tulostaa kertolaskun näkyviin */
-        document.getElementById("question").innerHTML = number1 + " * " + number2;
-        /*Kuuntelija: "disabloi" vastauskentän, tarkistusnappia painamalla checkAnswer funktio suorittetaan ja avaa seuraavanappin */
-        answer.addEventListener("keypress", buttonCheckActivation);
-        buttoncheck.addEventListener("click", buttonCheckDisabled);
-        buttoncheck.addEventListener("click", checkAnswer);
-        buttoncheck.addEventListener("click", buttonNextDisabled);
-        
-     }
-     /*Viiden kysymyksen jälkeen kerrotaan lopputulos */
-     else {
-        document.getElementById("placeOfAnswer").innerHTML= "Visa loppui. Pisteesi oli:"
-        document.getElementById("buttoncheck").disabled = true;
-        document.getElementById("buttonnext").disabled = true; 
-     }
-    console.log("refreshed");
-    console.log(numberOfQuestion);
-    console.log(answerUser);
-    objectOne = {
-        numberOne: number1,
-        numberTwo: number2,
-        answerUserObject: answerUser,
-        taskObject: task
-     }
-     console.log(objectOne);
-
+//Funktio tarkistaa onko tulos oikein ja syöttää sen näytölle. Laskee myös oikeat vastaukset 
+function checkAnswer(){
+    let userAnswer = Number(document.getElementById("answer").value);
+    console.log("Kysymys:" + questionNumber)
+    if (userAnswer == task){
+        score++;
+        document.getElementById("placeOfAnswer").innerHTML= "Vastasit oikein!";
+    }
+    else {
+        document.getElementById("placeOfAnswer").innerHTML= "Vastasit väärin. Oikea vastaus on " + task+ ".";
+    }
+    buttonNextDisabled()  //Voisiko nämä funktio yhdistää????
+    buttonCheckDisabled()
+    if (questionNumber == 5){
+        console.log("hep")
+        document.getElementById("scorebutton").style.display='block';
+        document.getElementById("buttonnext").style.display='none';  
+        document.getElementById("scorebutton2").disabled = false; 
+    }
+    console.log(userAnswer)
+    console.log(task + "task")
+    console.log(score + " score")
+    return score
 }
 
- /*Funktio tallentaa olioon number1, number2, aswerUser ja taskin joka kysymksen jälkeen  */
-    /*Kysymysten jälkeen tulostaa sivulla taulukon, jossa näkyy kysymykset ja vastasitko käyttäjä oikein */
-/*let objectOne1= objectOne;
-function objectTable(){
-    objectList.push(objectOne1);
-    console.log(objectList);
+function showScore() {
+    document.getElementById("quesionview").style.display='none';
+    const para = document.createElement("p");
+    if (score <= 1){
+        para.innerHTML = "Sait oikein " + score + "/5." + "<br>" + "Tarviset vielä harjoitusta"; 
+    }
+    else if (score <= 3){
+        para.innerHTML = "Sait oikein " +nscore + "/5." + "<br>" + "Hajoittele vielä vähän"; 
+    }
+    else if (score <= 4){
+        para.innerHTML = "Sait oikein " + score + "/5." + "<br>" + "Hyvä!"; 
+    }
+    else{
+        para.innerHTML = "Loistavaa! Sait kaikki oikein!" + "<br>" + score + "/5."; 
+    }
+    // Append to another element:
+    document.getElementById("scoreview").appendChild(para);
+    document.getElementById("scorebutton2").disabled = true;
 }
-objectTable()
-/*PÄÄOHJELMA ALKAA TÄSSÄ*/
+
+
+//PÄÄOHJELMA ALKAA TÄSTÄ
+
+let number1 = 0;
+let number2 = 0;
+let task=0;
+let score = 0;
+let questionNumber=0;
 
 /*Aloitus sivu näkyvissä ja painaa aloitusnappia, niin kysymykset tulee esiin*/
 document.getElementById('startview').style.display='block';
 document.getElementById("quesionview").style.display='none';
+document.getElementById("scorebutton").style.display='none';
 document.getElementById("buttonstart").onclick=function(){
     document.getElementById("startview").style.display='none';
     document.getElementById("quesionview").style.display='block';
+    document.getElementById("scorebutton").style.display='none';
+    reload()
 }
-buttonstart.addEventListener("click", reload);
-/*Tulostaa kysymyksen  */
-var objectList = [];
-var objectOne = []
-var numberOfQuestion = 0
-buttonnext.addEventListener("click", reload);
 
 
+function reload(){
+    number1 = getRndInteger(1, 10)
+    number2 = getRndInteger(1, 10)
+    task = number1 * number2;
 
+    console.log("qn" + typeof questionNumber)
+    
+    if(questionNumber < 5){
+        //Funktio syöttää kysymyksen näytölle ja vastauslomake aktivoituu
+        document.getElementById("answer").value="";
+        document.getElementById("placeOfAnswer").innerHTML="";
+        questionInput (number1, number2)
+    }
+    else{
+        document.getElementById("placeOfAnswer").innerHTML= "Visa on ohi";
+    }
+    document.getElementById("answer").disabled =false;
+    questionNumber++;
+    document.getElementById("numberofquestion").innerHTML= "Kertolasku " + questionNumber + "/5";
+    document.getElementById("buttonnext").disabled = true;
+    console.log("task:" + task);
+    return task;
+    }
 
