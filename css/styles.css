@@ -12,6 +12,9 @@ h1 {
 body { 
     background-color:#0D5161;
 }
+.navbar{
+    font-family:'Titan One', cursive;
+}
 .navbar-collapse {
     background-color: #1DBDE0;
 }
