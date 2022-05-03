@@ -4,17 +4,16 @@
 
 //Vakioidaan elementit
 
-const restartBtn = document.getElementById("restart");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-const submitBtn = document.getElementById("submit");
-const mainMenuBtn = document.getElementById("mainmenu");
-const trueBtn = document.getElementById("True");
-const false1Btn = document.getElementById("False1");
-const false2Btn = document.getElementById("False2");
-const userScore = document.getElementById("user-score");
-const totalScore = document.getElementById("total-score");
-const questionText = document.getElementById("question-text");
+const RESTART_BTN = document.getElementById("restart");
+const SUBMIT_BTN = document.getElementById("submit");
+const MAIN_MENU_BTN = document.getElementById("mainmenu");
+const TRUE_BTN = document.getElementById("True");
+const FALSE1_BTN = document.getElementById("False1");
+const FALSE2_BTN = document.getElementById("False2");
+const USER_SCORE = document.getElementById("user-score");
+const TOTAL_SCORE = document.getElementById("total-score");
+const QUESTION_TEXT = document.getElementById("question-text");
+const CURRENT_QUESTION_ELEMENT = document.getElementById("questions-number");
 
 
 //Asetetaan lähtöarvot kysymysten ja pisteiden määrälle
@@ -67,61 +66,59 @@ let questions = [
 ]
 
 //Luodaan painikkeiden toiminnot (kutsuu funtiota kun painiketta painetaan)
-restartBtn.addEventListener("click", restart);
-prevBtn.addEventListener("click", prev);
-nextBtn.addEventListener("click", next);
-submitBtn.addEventListener("click", submit);
-mainMenuBtn.addEventListener("click", main);
+RESTART_BTN.addEventListener("click", restart);
+SUBMIT_BTN.addEventListener("click", submit);
+MAIN_MENU_BTN.addEventListener("click", main);
 
 
 //Aloitetaan kysely
 function beginQuiz(){
     currentQuestion = 0;
-    totalScore.innerHTML = questions.length;
-    questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
-    trueBtn.onclick = () => {
+
+    TOTAL_SCORE.innerHTML = questions.length;
+    QUESTION_TEXT.innerHTML = questions[currentQuestion].question;
+    TRUE_BTN.innerHTML = questions[currentQuestion].answers[0].option;
+    TRUE_BTN.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
             if(score < 5) { 
                 score++;
             }
         }
-        userScore.innerHTML = score;
-        if(currentQuestion <5) { 
+        USER_SCORE.innerHTML = score;
+        if(currentQuestion <4) { 
             next();
         }
     }
 
-    false1Btn.innerHTML = questions[currentQuestion].answers[1].option;
-    false1Btn.onclick = () => {
+    FALSE1_BTN.innerHTML = questions[currentQuestion].answers[1].option;
+    FALSE1_BTN.onclick = () => {
         if(questions[currentQuestion].answers[1].answer){
             if(score < 5) {
                 score++;
             }
         }
 
-        userScore.innerHTML = score;
-        if(currentQuestion < 5) {
+        USER_SCORE.innerHTML = score;
+        if(currentQuestion < 4) {
             next(); 
         }
     }
 
-    false2Btn.innerHTML = questions[currentQuestion].answers[2].option;
-    false2Btn.onclick = () => {
+    FALSE2_BTN.innerHTML = questions[currentQuestion].answers[2].option;
+    FALSE2_BTN.onclick = () => {
         if(questions[currentQuestion].answers[2].answer){
             if(score < 5) { 
                 score++;
             }
         }
-        userScore.innerHTML = score;
+        USER_SCORE.innerHTML = score;
         if(currentQuestion <5) { 
             next();
         }
     }
     //piilotetaan aloituksesta tarpeettomat nappulat
-    prevBtn.classList.add("hide");
-    submitBtn.classList.add("hide");
-    mainMenuBtn.classList.add("hide");
+    SUBMIT_BTN.classList.add("hide");
+    MAIN_MENU_BTN.classList.add("hide");
 
     }
 
@@ -131,146 +128,89 @@ beginQuiz();
 //Aloita alusta nappulan toiminto
 function restart(){
     currentQuestion = 0;
-    prevBtn.classList.remove("hide");
-    nextBtn.classList.remove("hide");
-    submitBtn.classList.add("hide");
-    trueBtn.classList.remove("hide");
-    false1Btn.classList.remove("hide");
-    false2Btn.classList.remove("hide");
+    CURRENT_QUESTION_ELEMENT.innerHTML = currentQuestion+1;
+    SUBMIT_BTN.classList.add("hide");
+    TRUE_BTN.classList.remove("hide");
+    FALSE1_BTN.classList.remove("hide");
+    FALSE2_BTN.classList.remove("hide");
     score = 0;
-    userScore.innerHTML = score;
+    USER_SCORE.innerHTML = score;
     beginQuiz();
 }
 
-//Seuraava kysymysnappula > poistaa nappulan viimeisen kysymyksen kohdalla
+//Siirtyy automaattisesti vastauksen jälkeen seuraavaan kysymykseen
 function next(){
     currentQuestion++;
+
     if(currentQuestion >= 5){
-        nextBtn.classList.add("hide");
-        prevBtn.classList.remove("hide");
-        submitBtn.classList.remove("hide");
+        SUBMIT_BTN.classList.remove("hide");
     }
 
-    questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
-    trueBtn.onclick = () => {
+    CURRENT_QUESTION_ELEMENT.innerHTML = currentQuestion+1;
+    QUESTION_TEXT.innerHTML = questions[currentQuestion].question;
+    TRUE_BTN.innerHTML = questions[currentQuestion].answers[0].option;
+    TRUE_BTN.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
             if(score < 5) {
                 score++;
             }
         }
-        userScore.innerHTML = score;
-        if(currentQuestion < 5){
+        USER_SCORE.innerHTML = score;
+        if(currentQuestion < 4){
             next();
         }
     }
-    false1Btn.innerHTML = questions[currentQuestion].answers[1].option;
-    false1Btn.onclick = () => {
+    FALSE1_BTN.innerHTML = questions[currentQuestion].answers[1].option;
+    FALSE1_BTN.onclick = () => {
         if(questions[currentQuestion].answers[1].answer){
             if(score < 5) {
                 score++;
             }
         }
 
-        userScore.innerHTML = score;
-        if(currentQuestion < 5) {
+        USER_SCORE.innerHTML = score;
+        if(currentQuestion < 4) {
             next(); 
         }
     }
 
-    false2Btn.innerHTML = questions[currentQuestion].answers[2].option;
-    false2Btn.onclick = () => {
+    FALSE2_BTN.innerHTML = questions[currentQuestion].answers[2].option;
+    FALSE2_BTN.onclick = () => {
         if(questions[currentQuestion].answers[2].answer){
             if(score < 5) {
                 score++;
             }
         }
-        userScore.innerHTML = score;
-        if(currentQuestion < 5) {
+        USER_SCORE.innerHTML = score;
+        if(currentQuestion < 4) {
             next(); 
         }
     }
-    prevBtn.classList.remove("hide");
 
 }
 
-//Edellinen kysymys nappulan toiminto
-function prev() {
-    currentQuestion--;
-    if(currentQuestion <= 0) {
-        prevBtn.classList.add("hide");
-        nextBtn.classList.remove("hide");
-        submitBtn.classList.add("hide");
-    }
-
-    questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
-    trueBtn.onclick = () => {
-        if(questions[currentQuestion].answers[0].answer){
-            if(score < 5) {
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if(currentQuestion < 5) {
-            score++
-        }
-    }
-
-    false1Btn.innerHTML = questions[currentQuestion].answers[1].option;
-    false1Btn.onclick = () => {
-        if(questions[currentQuestion].answers[1].answer){
-            if(score < 5) {
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if(currentQuestion < 5) {
-            next();
-        }
-    }
-
-    false2Btn.innerHTML = questions[currentQuestion].answers[2].option;
-    false2Btn.onclick = () => {
-        if(questions[currentQuestion].answers[2].answer){
-            if(score < 5) {
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if(currentQuestion < 5) {
-            next(); 
-        }
-    }
-    nextBtn.classList.remove("hide");
-    submitBtn.classList.add("hide");
-
-}
 
 // Vastaukset nappulan toiminto
 function submit() {
 
     let reply = ""
-
-    prevBtn.classList.add("hide");
-    nextBtn.classList.add("hide");
-    submitBtn.classList.add("hide");
-    trueBtn.classList.add("hide");
-    false1Btn.classList.add("hide");
-    false2Btn.classList.add("hide");
-    mainMenuBtn.classList.remove("hide");
+    SUBMIT_BTN.classList.add("hide");
+    TRUE_BTN.classList.add("hide");
+    FALSE1_BTN.classList.add("hide");
+    FALSE2_BTN.classList.add("hide");
+    MAIN_MENU_BTN.classList.remove("hide");
 
 
     //Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
 
-    questionText.innerHTML = reply;
+    QUESTION_TEXT.innerHTML = reply;
 
     if(score <= 4) {
 
-        questionText.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
+        QUESTION_TEXT.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
                                     + "3. RON JA HERMIONE ovat Harryn parhaat ystävät <br>" + "4. Velhomaailman suosittu urheilulaji on HUISPAUS <br>" + "5. Harryn lemmikki Hedwig on TUNTURIPÖLLÖ"}
         else{ 
-        restartBtn.classList.add("hide");
+        RESTART_BTN.classList.add("hide");
 
         let pic = document.createElement("IMG");
         pic.setAttribute("src", "images/tylypahka.jpg");
@@ -278,13 +218,13 @@ function submit() {
         pic.setAttribute("height", "auto");
         pic.setAttribute("alt", "Tylypahka");
 
-            questionText.innerHTML = "Hienoa, kaikki oikein!"; 
+            QUESTION_TEXT.innerHTML = "Hienoa, kaikki oikein!"; 
             document.getElementById("picture").appendChild(pic);}
 
 }
 //Vastaukset nappulan toiminto
 function showResults() {
-    submitBtn.addEventListener(click,showResults);
+    SUBMIT_BTN.addEventListener(click,showResults);
 
 }
 
