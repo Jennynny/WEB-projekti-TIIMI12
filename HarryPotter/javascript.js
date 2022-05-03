@@ -118,8 +118,9 @@ function beginQuiz(){
             next();
         }
     }
+    //piilotetaan aloituksesta tarpeettomat bnappulat
     prevBtn.classList.add("hide");
-    submitBtn.classList.add("hide"); //piilotettu vastausnappula
+    submitBtn.classList.add("hide");
     mainMenuBtn.classList.add("hide");
 
     }
@@ -291,3 +292,5 @@ function showResults() {
 function main() {
     location.href="../index.html";
 }
+
+
