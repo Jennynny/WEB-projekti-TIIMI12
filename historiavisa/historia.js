@@ -115,7 +115,6 @@ submitBtn.addEventListener('click', () => {
     } else{
         quiz.innerHTML = `
            <h2>Mahtavaa kaikki oikein! Sait ${score}/${quizData.length} pistettä.</h2>
-
            <button onclick="location.reload()">Alkuun</button>
            `
     }
