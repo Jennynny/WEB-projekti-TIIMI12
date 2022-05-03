@@ -28,6 +28,9 @@
     overflow: hidden;
     margin: 0;
   }*/
+  .navbar{
+    font-family: 'Titan One', cursive;
+}
     .quiz-container{
     background-color: #fff;
     border-radius: 10px;
