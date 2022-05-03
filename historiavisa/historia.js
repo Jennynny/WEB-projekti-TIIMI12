@@ -100,8 +100,7 @@ submitBtn.addEventListener('click', () => {
 
        if(currentQuiz < quizData.length) {
            loadQuiz()
-       } else { 
-           if(score <= 4){
+       } else { if(score <= 4){
          document.getElementById("quiz").innerHTML = "Hupsista jotain meni väärin. Tässä oikeat vastaukset:<br>"
        
 
