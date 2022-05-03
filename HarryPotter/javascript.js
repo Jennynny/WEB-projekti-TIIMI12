@@ -142,7 +142,7 @@ function restart(){
 function next(){
     currentQuestion++;
 
-    if(currentQuestion >= 5){
+    if(currentQuestion >= 4){
         SUBMIT_BTN.classList.remove("hide");
     }
 
