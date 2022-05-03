@@ -85,7 +85,7 @@ function beginQuiz(){
             }
         }
         USER_SCORE.innerHTML = score;
-        if(currentQuestion <5) { 
+        if(currentQuestion <4) { 
             next();
         }
     }
@@ -99,7 +99,7 @@ function beginQuiz(){
         }
 
         USER_SCORE.innerHTML = score;
-        if(currentQuestion < 5) {
+        if(currentQuestion < 4) {
             next(); 
         }
     }
@@ -141,6 +141,7 @@ function restart(){
 //Siirtyy automaattisesti vastauksen jälkeen seuraavaan kysymykseen
 function next(){
     currentQuestion++;
+
     if(currentQuestion >= 5){
         SUBMIT_BTN.classList.remove("hide");
     }
@@ -155,7 +156,7 @@ function next(){
             }
         }
         USER_SCORE.innerHTML = score;
-        if(currentQuestion < 5){
+        if(currentQuestion < 4){
             next();
         }
     }
@@ -168,7 +169,7 @@ function next(){
         }
 
         USER_SCORE.innerHTML = score;
-        if(currentQuestion < 5) {
+        if(currentQuestion < 4) {
             next(); 
         }
     }
@@ -181,7 +182,7 @@ function next(){
             }
         }
         USER_SCORE.innerHTML = score;
-        if(currentQuestion < 5) {
+        if(currentQuestion < 4) {
             next(); 
         }
     }
