@@ -118,7 +118,7 @@ function beginQuiz(){
             next();
         }
     }
-    //piilotetaan aloituksesta tarpeettomat bnappulat
+    //piilotetaan aloituksesta tarpeettomat nappulat
     prevBtn.classList.add("hide");
     submitBtn.classList.add("hide");
     mainMenuBtn.classList.add("hide");
