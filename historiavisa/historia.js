@@ -117,7 +117,7 @@ document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
 let reply="";
 questionText.innerHTML = reply;
 if(score <= 4) {
-    questionText.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>"}
+    questionText.innerHTML = ""Hupsista jotain meni väärin. Tässä oikeat vastaukset:<br>"}
     else{
         questionText.innerHTML = "Hienoa, kaikki oikein!";
     }*/

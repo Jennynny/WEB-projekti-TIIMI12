@@ -35,22 +35,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills nav-fill">
           <li class="nav-item mx-3">
-            <a class="nav-link" aria-current="page" href="../index.html">Kotisivu</a> 
-          </li>
-          <li class="nav-item mx-3">
             <a class="nav-link" href="../infosivu.html">Infosivu</a>
-          </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="matikka.html">Matikkavisa</a>
-          </li>
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="../historiavisa//index.html">Historiavisa</a>
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="../HarryPotter/index.html">Harry Potter -visa</a>
           </li>
           <li class="nav-item mx-3">
+            <a class="nav-link" href="../historiavisa//index.html">Historiavisa</a>
+          </li>
+          <li class="nav-item mx-3">
             <a class="nav-link" href="../Maantietovisa/maantieto.html">Maantieto</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="matikka.html">Matikkavisa</a>
           </li>
         </ul>
       </div>
@@ -69,7 +66,7 @@
           <!--Aloitus dia-->
           <div id="startview" class="row rounded">
             <!--Kuvan lähde: https://tenor.com/view/cyrentec-stellargenetic-scifi-bird-birb-gif-25050233-->
-            <div class="col col-sm-0"> <img src="images/cyrentec-stellargenetic.gif" alt="" class="float-start" width="25%"></div>
+            <div class="col"> <img src="images/cyrentec-stellargenetic.gif" alt="" class="float-start" width="25%"></div>
             <div class="col  col-sm-12 text-center">
               <h3>Aloita kertolaskuvisa</h3>
               <button type="button" id="buttonstart" class="btn btn-dark">Aloita</button>
@@ -82,11 +79,12 @@
                 <h3 id="numberofquestion" class="text-center"></h3>
               </div>
             </div>
+            <!--Kertolasku ja vastauskenttä-->
             <div class="row ">
-              <div class="col-sm-6 h4 ">
-                <p id="question" class="text-md-end text-sm-center"></p>    
+              <div class="col-6 h4 ">
+                <p id="question" class="text-end"></p>    
               </div>
-              <div id= "inputplace" class="col-sm-6 text-md-start text-sm-center">
+              <div id= "inputplace" class="col-6 text-start">
                 <input type="number" id="answer" >
                 
               </div> 
