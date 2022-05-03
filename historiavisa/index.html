@@ -54,17 +54,56 @@
 <!--https://pixabay.com/photos/egypt-hieroglyphs-temple-hatshepsut-321764/-->
 
   <!--Visailut-->
-  <div class="quiz-container">
+  <div class="quiz-container" id="quiz">
+    <div class="row">
+        <div class="col">
+    <div class="quiz-header">
+    <h3 id="numberofquestion"></h3>
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer" id="a" class="answer">
+          <label for="a" id="a_text">Answer</label>
+        </li>
+
+        <li>
+          <input type="radio" name="answer" id="b" class="answer">
+          <label for="b" id="b_text">Answer</label>
+        </li>
+
+        <li>
+          <input type="radio" name="answer" id="c" class="answer">
+          <label for="c" id="c_text">Answer</label>
+        </li>
+
+        <li>
+          <input type="radio" name="answer" id="d" class="answer">
+          <label for="d" id="d_text">Answer</label>
+        </li>
+
+      </ul>
+    </div>
+
+    <button id="submit">Submit</button>
+</div>
+</div>
+</div>
+
+  <!--<div class="quiz-container">
+  <div class="col">
+    <h3 id="numberofquestion"></h3>
     <h2> Kuka seuraavista oli faarao?</h2><hr>
     <input type="radio" name="question1" id="false1">Horus<br>
     <input type="radio" name="question1" id="false2">Nefertum<br>
     <input type="radio" name="question1" id="false3">Sekhmet<br>
-    <input type="radio" name="question1" id="correct1">Ramses<br>
-    <button type="button" onclick="v01">Vastaus</button>
-    <button class="next" onclick="next(1)">Seuraava</button>
+    <input type="radio" name="question1" id="correct1">Ramses<br>-->
+    <!--<button type="button" onclick="v01">Vastaus</button>-->
+    <!--<button class="next" onclick="next(1)">Seuraava</button>
+</div>
 </div>
 
 <div class="quiz-container">
+<div class="col">
     <h2> Minkä niminen oli muinais egyptin auringonjumala?</h2><hr>
     <input type="radio" name="question2" id="false4">Amon<br>
     <input type="radio" name="question2" id="correct2">Ra<br>
@@ -72,8 +111,10 @@
     <input type="radio" name="question2" id="false6">Seth<br>
     <button class="next" onclick="next(2)">Seuraava</button>
 </div>
+</div>
 
 <div class="quiz-container">
+<div class="col">
     <h2> Kuka antiikinkreikan jumalista oli sotataidon, tiedon ja viisauden jumala?</h2><hr>
     <input type="radio" name="question3" id="correct3">Athene<br>
     <input type="radio" name="question3" id="false7">Afrodite<br>
@@ -81,8 +122,10 @@
     <input type="radio" name="question3" id="false9">Selene<br>
     <button class="next" onclick="next(3)">Seuraava</button>
 </div>
+</div>
 
 <div class="quiz-container">
+<div class="col">
     <h2>Tähän vielä yks kysymys?</h2><hr>
     <input type="radio" name="question4" id="correct4">dii<br>
     <input type="radio" name="question4" id="false10">daa<br>
@@ -90,15 +133,28 @@
     <input type="radio" name="question4" id="false12">daapadaa<br>
     <button class="next" onclick="next(4)">Seuraava</button>
 </div>
+</div>
 
 <div class="quiz-container">
+<div class="col">
     <h2>Mistä olympialaiset ovat lähtöisin?</h2><hr>
     <input type="radio" name="question5" id="false13">Turkista<br>
     <input type="radio" name="question5" id="false14">Egyptistä<br>
     <input type="radio" name="question5" id="false15">Roomasta<br>
-    <input type="radio" name="question5" id="correct16">Kreikasta<br>
-    <button onclick="result()">Lähetä vastaukset</button>
+    <input type="radio" name="question5" id="correct5">Kreikasta<br>
+    <button class="next" onclick="next(5)">Seuraava</button>-->
+    <!--<button onclick="result()">Lähetä vastaukset</button>-->
+<!--</div>
 </div>
+
+<div class="quiz-container">
+<div class="col">
+    <h2>Vastaukset</h2>
+    <p id="answers" ></p>
+    <button onclick="result()">Lähetä vastaukset</button>
+
+</div>
+</div>-->
 
    <!-- Add footer -->
    <div class="container">

@@ -1,12 +1,44 @@
 /*Enni Kelloniemi*/
 
 #title{
-    text-align: center;
     font-family: 'Titan One', cursive;
     color: orange;
+}
+.navbar{
+    font-family: 'Titan One', cursive;
 }
 
 #questionBox{
     background-color:#FFF37D;
-    text-align: center;
+    height: 400px;
+    font-family: 'Boogaloo', cursive;
+}
+
+button{
+    margin: 8px;
+}
+#question{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#inputplace{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h3{
+    margin: 30px;
+}
+h2{
+    margin: 30px;
+}
+#placeOfAnswerCol{
+    min-height: 2rem;
+}
+/* Koodin lähde: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_arrow_number*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 4px;
 }
