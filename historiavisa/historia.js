@@ -66,6 +66,7 @@ function loadQuiz() {
 
     const currentQuizData = quizData[currentQuiz]
 
+    document.getElementById("numberofquestion").innerHTML= currentQuiz + 1 + "/5";
     questionEl.innerText = currentQuizData.question
     a_text.innerText = currentQuizData.a
     b_text.innerText = currentQuizData.b
@@ -99,19 +100,23 @@ submitBtn.addEventListener('click', () => {
 
        if(currentQuiz < quizData.length) {
            loadQuiz()
-       } else {
+       } else { 
+           if(score <= 4){
+         document.getElementById("quiz").innerHTML = "Hupsista jotain meni väärin. Tässä oikeat vastaukset:<br>"
+       
+
            quiz.innerHTML = `
            <h2>Sait ${score}/${quizData.length} pistettä</h2>
 
            <button onclick="location.reload()">Reload</button>
            `
+           }
        }
      }
 })
 
-let numberOfQuestion = 0;
-numberOfQuestion++;
-document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
+
+
 
 /*const questionText = document.getElementById("question-text");
 let reply="";
