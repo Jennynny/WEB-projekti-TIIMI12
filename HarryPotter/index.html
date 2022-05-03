@@ -27,39 +27,37 @@
   <h1 class="mt-5">Visailuja viitosluokkalaisille</h1>
   </div>
 
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light">
-<div class="container-fluid d-flex">
-<a class="navbar-brand" href="index.html">
-<img src="images/iconit/2x/outline_home_black_24dp.png" alt=""class="d-inline-block align-text-top">
-</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills nav-fill">
-
-<li class="nav-item mx-3">
-  <a class="nav-link" href="../infosivu.html">Infosivu</a>
-</li>
-<li class="nav-item mx-3">
-  <a class="nav-link" href="../HarryPotter/index.html">Harry Potter -visa</a>
-</li>
-<li class="nav-item mx-3">
-  <a class="nav-link" href="../historiavisa/index.html">Historiavisa</a>
-</li>
-<li class="nav-item mx-3">
-  <a class="nav-link" href="../Maantietovisa/maantieto.html">Maantietovisa</a>
-</li>
-<li class="nav-item mx-3">
-  <a class="nav-link" href="../matikkavisa/matikka.html">Matikkavisa</a>
-</li>
-
-
-</ul>
-</div>
-</div>
-</nav>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light me-4 ">
+    <div class="container-fluid d-flex">
+      <a class="navbar-brand" href="../index.html">
+       <!-- <img src="images/iconit/2x/outline_home_black_24dp.png" alt=""class="d-inline-block align-text-top"> --><i class="fa-solid fa-house fa-2x" class="d-inline-block align-text-top"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse rounded-start rounded end" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills nav-fill">
+         
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../infosivu.html">Infosivu</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../HarryPotter/index.html">Harry Potter -visa</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../historiavisa/index.html">Historiavisa</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../Maantietovisa/maantieto.html">Maantietovisa</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="../matikkavisa/matikka.html">Matikkavisa</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
 <div class="container-md">
@@ -89,28 +87,7 @@
 
   </div>
 
-  <div id ="stepProgress">
-    <div class="step">
-      <p class="step-text">Step 1</p>
-      <div class="bullet">1</div>
-    </div>
-    <div class="step">
-      <p class="step-text">Step 2</p>
-      <div class="bullet">2</div>
-    </div>
-    <div class="step">
-      <p class="step-text">Step 3</p>
-      <div class="bullet">3</div>
-    </div>
-    <div class="step">
-      <p class="step-text">Step 4</p>
-      <div class="bullet">4</div>
-    </div>
-    <div class="step">
-      <p class="step-text">Step 5</p>
-      <div class="bullet">5</div>
-    </div>
-  </div>
+  <div class=" questions-amount">Kysymys: <span id="questions-number">0</span> / 5</div>
  
 </div>
 
@@ -135,6 +112,8 @@
   </div>
   </div>
 
+  <!--Add Fontawesome JS file-->
+<script src="https://kit.fontawesome.com/b95bacda37.js" crossorigin="anonymous"></script>
     
 <!-- Add Bootstrap JS file-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
