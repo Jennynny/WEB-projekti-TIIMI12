@@ -1,4 +1,7 @@
+//Koodin lähde: https://codingwithnick.in/create-a-quiz-app-using-html-css-javascript/
+
 //Visa kysymykset
+
 const quizData = [
     {
         question: "Kuka seuraavista oli faarao?",
@@ -9,15 +12,15 @@ const quizData = [
         correct: "d",
     },
     {
-        question: "Minkä niminen oli muinais egyptin auringonjumala?",
-        a: "Amon",
+        question: "Minkä niminen oli muinaisen Egyptin auringonjumala?",
+        a: "Bes",
         b: "Ra",
         c: "Osiris",
         d: "Seth",
         correct: "b",
     },
     {
-        question: "Kuka antiikinkreikan jumalista oli sotataidon, tiedon ja viisauden jumala?",
+        question: "Kuka antiikin Kreikan jumalista oli sotataidon, tiedon ja viisauden jumala?",
         a: "Athene",
         b: "Afrodite",
         c: "Hera",
@@ -25,7 +28,7 @@ const quizData = [
         correct: "a",
     },
     {
-        question: "Mistä olympialaiset ovat lähtöisin?",
+        question: "Mistä olympian kisat ovat lähtöisin?",
         a: "Turkista",
         b: "Egyptistä",
         c: "Roomasta",
@@ -88,7 +91,7 @@ function getSelected() {
     return answer
 }
 
-//kerrotaan kuinka monta pistettä saatiin
+//kerrotaan kuinka monta pistettä saatiin ja oikeat vastaukset
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
@@ -100,16 +103,22 @@ submitBtn.addEventListener('click', () => {
 
        if(currentQuiz < quizData.length) {
            loadQuiz()
-       } else { if(score <= 4){
-         document.getElementById("quiz").innerHTML = "Hupsista jotain meni väärin. Tässä oikeat vastaukset:<br>"
-       
+       } else {
+           if(score <= 4){
 
            quiz.innerHTML = `
-           <h2>Sait ${score}/${quizData.length} pistettä</h2>
+           <h4>Hupsista jotain meni väärin. Sait ${score}/${quizData.length} pistettä. Tässä oikeat vastaukset:<br> 1. Oikea vastaus on Ramses. Muut henkilöt ovat muinaisen Egyptin jumalia.<br> 2. Oikea vastaus on Ra. Bes oli naisten, perheen ja kotien jumala. Osiris oli manalan jumala ja Seth oli kaaoksenjumala.<br> 3.Oikea vastaus on Athene. Afrodite oli rakkauden ja kauneuden jumalatar. Hera oli ylijumala Zeuksen puoliso, avioliiton, naisten ja valtakuntien jumalatar. Selene oli Kuun jumalatar.<br>
+            4.Oikea vastaus Kreikasta. Olympian kisat eli ”antiikin olympialaiset” olivat antiikin kreikkalaiset Zeus-jumalan kunniaksi järjestetyt urheilukilpailut. Ne järjestettiin Olympian pyhäkköalueella Eliin maakunnassa Peloponnesoksen luoteisosassa.<br> 5.Oikea vastaus on Aristoteles. Homeros oli mahdollisesti myyttinen runoilija antiikin Kreikan muinaisajalla. Filippos II oli Aleksanterin isä. Antipatros oli yksi Filippoksen upseereista.</h4>
 
            <button onclick="location.reload()">Reload</button>
            `
-           }
+    } else{
+        quiz.innerHTML = `
+           <h2>Mahtavaa kaikki oikein. Sait ${score}/${quizData.length} pistettä.</h2>
+
+           <button onclick="location.reload()">Reload</button>
+           `
+    }
        }
      }
 })
