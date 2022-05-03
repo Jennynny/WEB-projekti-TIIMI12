@@ -2,3 +2,165 @@ h1 {
     color: #ffa500;
     font-family: 'Titan One', cursive;
 }
+.navbar{
+    font-family:'Titan One', cursive;
+}
+h2 {
+    color: #ffa500;
+    font-family: 'Titan One', cursive;
+}
+
+.info-container {
+    font-family:'Prompt', sans-serif;
+    background-color:#f18973;
+    padding-bottom: 4px;
+    padding-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.quiz-container{
+    background-color: #e3eaa7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.question-number h4 {
+    font-family: 'Prompt', sans-serif;
+    color:black;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding-bottom: 10px;
+}
+.question{
+    font-family: 'Prompt', sans-serif;
+    font-size: 42px;
+    color: black;
+    padding:15px 0;
+    margin-bottom: 20px;
+}
+.options div{
+    background-color: rgb(124, 174, 214);
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding:15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+  
+}
+
+.options div.disabled{
+    pointer-events: none;
+}
+
+.options div.correct{
+    z-index: 1;
+    color: white;
+}
+
+.options div.correct::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:green;
+    z-index: -1; /*ilman tätä vetää tyhjäksi värin kanssa vastausvaihtoehto "lootan"*/ 
+}
+
+.options div.wrong{
+    z-index: 1;
+    color: white;
+}
+
+.options div.wrong::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:red;
+    z-index: -1;
+  
+}
+.button .btn.btn-warning{
+    font-family: 'Prompt', sans-serif;
+    
+}
+
+.answers-tracker div{
+    
+    height: 40px;
+    width: 40px;
+    background-color: rgb(124, 174, 214);
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+.answers-tracker div.correct{
+    background-color: green;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;  
+}
+
+.answers-tracker div.wrong{
+    background-color: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.quiz-over{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+
+.show{
+    display:flex;
+}
+
+.quiz-over .box{
+    font-family: 'Prompt', sans-serif;
+    background-color: rgb(3, 90, 86);
+    padding:30px;
+    border-radius: 10px;
+    text-align: center;
+    flex-basis: 700px;
+    max-width: 700px;
+    color: white;
+    box-shadow: #009688;
+}
+
+.quiz-over .box  h1{
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+}
+
+/*.quiz-over .box button{
+    padding: 15px 50px;
+    border:none;
+    background-color: #f7b53c;
+    border-radius: 5px;
+    font-size: 16px;
+    margin:15px 0 20px;
+    color: white;
+}*/
+
