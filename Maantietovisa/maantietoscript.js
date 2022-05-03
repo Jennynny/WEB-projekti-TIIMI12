@@ -222,7 +222,7 @@ function quizOver(){
         document.getElementById("teksti").innerHTML = "Hupsista.. kokeillaanko uudelleen? ";
     }
     else if(score < 3){
-        document.getElementById("teksti").innerHTML = "Hyvin menee. Kokeillaanko uudelleen? + ";
+        document.getElementById("teksti").innerHTML = "Hyvin menee. Kokeillaanko uudelleen? ";
     }
     else if(score <= 4){
         document.getElementById("teksti").innerHTML = "Osaat hienosti! ";

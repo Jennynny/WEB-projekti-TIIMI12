@@ -142,7 +142,7 @@ function restart(){
 function next(){
     currentQuestion++;
 
-    if(currentQuestion >= 5){
+    if(currentQuestion >= 4){
         SUBMIT_BTN.classList.remove("hide");
     }
 
@@ -213,7 +213,7 @@ function submit() {
         RESTART_BTN.classList.add("hide");
 
         let pic = document.createElement("IMG");
-        pic.setAttribute("src", "images/tylypahka.jpg");
+        pic.setAttribute("src", "images/harry-potter-cute.gif");
         pic.setAttribute("width", "auto");
         pic.setAttribute("height", "auto");
         pic.setAttribute("alt", "Tylypahka");
