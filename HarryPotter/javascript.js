@@ -127,7 +127,6 @@ function beginQuiz(){
 
 beginQuiz();
 
-
 //Aloita alusta nappulan toiminto
 function restart(){
     currentQuestion = 0;
@@ -292,5 +291,3 @@ function showResults() {
 function main() {
     location.href="../index.html";
 }
-
-

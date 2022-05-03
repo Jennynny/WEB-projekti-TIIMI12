@@ -50,6 +50,30 @@
      align-items: center;
      flex-direction: column;
  }
+
+ .answers-tracker div{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(86, 19, 117);
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+
+.answers-tracker div.correct{
+    background-color: green;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;  
+}
+
+.answers-tracker div.wrong{
+    background-color: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
  
  .hide{
      display: none;

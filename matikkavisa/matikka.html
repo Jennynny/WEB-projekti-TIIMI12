@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <!--Google fons Indie Flower-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="stylematikka.css">
 <body>
     
@@ -18,11 +23,11 @@
   <div class = "headline">
     <h1 class="mt-5">Visailuja viitosluokkalaisille</h1>
   </div>
-
+<!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid d-flex">
       <a class="navbar-brand" href="../index.html">
-        <img src="../images/iconit/2x/outline_home_black_24dp.png" alt=""class="d-inline-block align-text-top">
+        <i class="fa-solid fa-house fa-2x" class="d-inline-block align-text-top"></i>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills nav-fill">
           <li class="nav-item mx-3">
-            <a class="nav-link" aria-current="page" href="../index.html">Home</a> 
+            <a class="nav-link" aria-current="page" href="../index.html">Kotisivu</a> 
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="../infosivu.html">Infosivu</a>
@@ -39,10 +44,10 @@
             <a class="nav-link" href="matikka.html">Matikkavisa</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#">Aila-Maria</a>
+            <a class="nav-link" href="../historiavisa//index.html">Historiavisa</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="../Harry Potter -tietovisa/index.html">Jonna</a>
+            <a class="nav-link" href="../HarryPotter/index.html">Harry Potter -visa</a>
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="../Maantietovisa/maantieto.html">Maantieto</a>
@@ -55,57 +60,62 @@
   <!--Sisältö-->
   <div class="container">
     <div class="row">
-      <div id="title" class="col">
-        <h2>Matikkavisa</h2>
+      <div id="title" class="col ">
+        <h2 class="text-center">Matikkavisa</h2>
       </div>
     </div>
       <div class="row">
-        <div id="questionBox" class="col ">
+        <div id="questionBox" class="col rounded">
           <!--Aloitus dia-->
-          <div id="startview" class="row">
-            <div class="col">
+          <div id="startview" class="row rounded">
+            <!--Kuvan lähde: https://tenor.com/view/cyrentec-stellargenetic-scifi-bird-birb-gif-25050233-->
+            <div class="col col-sm-0"> <img src="images/cyrentec-stellargenetic.gif" alt="" class="float-start" width="25%"></div>
+            <div class="col  col-sm-12 text-center">
               <h3>Aloita kertolaskuvisa</h3>
-              <button type="button" id="buttonstart" class="btn btn-primary">Aloita</button>
+              <button type="button" id="buttonstart" class="btn btn-dark">Aloita</button>
             </div>
           </div>
           <!--Kysymykset-->
           <div id="quesionview">
-          <div class="row">
-              <div class="col">
-                <h3 id="numberofquestion"></h3>
+            <div class="row">
+              <div class="col ">
+                <h3 id="numberofquestion" class="text-center"></h3>
               </div>
-          </div>
-          <div class="row">
-            <div class="col">
-                <p id="question"></p>    
+            </div>
+            <div class="row ">
+              <div class="col-sm-6 h4 ">
+                <p id="question" class="text-md-end text-sm-center"></p>    
+              </div>
+              <div id= "inputplace" class="col-sm-6 text-md-start text-sm-center">
+                <input type="number" id="answer" >
+                
+              </div> 
+            </div>
+            <div class="row">
+              <div id="placeOfAnswerCol" class="col">
+                <p id="placeOfAnswer" class="text-center h5"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-center">  
+                <button onclick = "checkAnswer(task)" type="button" id="buttoncheck" class="btn btn-dark" disabled>Tarkista</button>
+                <button onclick = "reload()" type="button" id="buttonnext" class="btn btn-dark" disabled>Seuraava</button>
+              </div>  
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-                <form action=""></form>
-                    <label for="answer" class="h3"> Vastaus</label>
-                    <input type="number" id="answer">
-                    <button type="button" id="buttoncheck" class="btn btn-primary" disabled>Tarkista</button>
-                </form>
-            </div>
+          <div id="scorebutton" class="col text-center">  
+            <button onclick = "showScore()" id="scorebutton2" type="button"  class="btn btn-dark" disabled>Näytä pisteet</button>
           </div>
-          <div class="row">
-            <div class="col">
-                <p id="placeOfAnswer"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">  
-                <button type="button" id="buttonnext" class="btn btn-primary" disabled>Seuraava</button>
-            </div>
-          </div>
+        </div>
       </div>
+      <div id ="scoreview" class="row text-center">
+        <div class="col">
+        </div>
       </div>
+      <div id="buttondiv" class="col text-center">  
+        <a class="btn btn-dark" href="../index.html" role="button">Kotisivulle</a>
+        <a class="btn btn-dark" href="matikka.html" role="button">Kertolaskuvisan alkuun</a>
       </div>
-       <div class="row"></div>
-
-   </div>
-
 
   <!-- Add footer -->
   <div class="container">
@@ -123,6 +133,8 @@
   </div>
 
 
+  <!--Add Fontawesome JS file-->
+<script src="https://kit.fontawesome.com/b95bacda37.js" crossorigin="anonymous"></script>
      <!--Add Bootstrap Js file-->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
