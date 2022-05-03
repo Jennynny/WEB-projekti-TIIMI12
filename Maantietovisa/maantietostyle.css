@@ -2,6 +2,9 @@ h1 {
     color: #ffa500;
     font-family: 'Titan One', cursive;
 }
+.navbar{
+    font-family:'Titan One', cursive;
+}
 h2 {
     color: #ffa500;
     font-family: 'Titan One', cursive;
@@ -70,18 +73,9 @@ h2 {
     background-color:green;
     z-index: -1; /*ilman tätä vetää tyhjäksi värin kanssa vastausvaihtoehto "lootan"*/
 
-    /*animation: animateBackground 1s ease;
-    animation-fill-mode: forwards;*/
+   
 }
 
-/*@keyframes animateBackground{
-    0%{
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}*/
 
 .options div.wrong{
     z-index: 1;
@@ -98,24 +92,13 @@ h2 {
     background-color:red;
     z-index: -1;
 
-    /*animation: animateBackground 1s ease;
-    animation-fill-mode: forwards;*/
+    
 }
 .button .btn.btn-warning{
     font-family: 'Prompt', sans-serif;
     
 }
-/*.button .btn .btn-warnign{
-    /*padding: 10px 30px;*/
-    /*background-color: #009688;*/
-    /*font-size: 18px;*/
-    /*color: white;
-    border:none;
-    cursor:pointer;
-    border-radius: 5px;
-    display: inline-block;
-    /*margin:10px 0;
-}*/
+
 
 .answers-tracker div{
     
@@ -171,10 +154,10 @@ h2 {
     box-shadow: #009688;
 }
 
-/*.quiz-over .box  h1{
-    font-size: 36px;
-    margin:0 0 20px
-}*/
+.quiz-over .box  h1{
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+}
 
 /*.quiz-over .box button{
     padding: 15px 50px;
