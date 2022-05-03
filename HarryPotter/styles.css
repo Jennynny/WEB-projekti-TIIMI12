@@ -4,10 +4,10 @@
 @import url("'https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto+Mono&display=swap'");
 
 
-/* *{
+/*{
      margin:0;
-     padding: 0;
-    } */
+     padding: 0; */
+    
  
 body {
      align-items: center;
@@ -20,18 +20,16 @@ body {
      font-size: 25px;
      width: 60vw;
      max-width: 100%;
-     background: rgb(239,175,9);
-     background: linear-gradient(90deg, rgba(239,175,9,1) 8%, rgba(221,119,241,0.981127485173757) 90%, rgba(112,70,129,1) 100%);
+     background: orange;
      height: 100%;
      padding: 20px;
      margin-bottom: 30px;
      /*box-shadow: 0 0 5px 4 px;*/
-     display: flex;
-     flex-direction: column;
      justify-content: center;
      align-items: center;
      border-radius: 8px;
      text-align: center;
+    /* text-align: -webkit-right; */
      align-items: center;
  }
  
@@ -62,8 +60,6 @@ body {
      background-color:  #1DBDE0;
      text-align: center;
      width: fit-content;
-    
-
  }
 
  .row{
