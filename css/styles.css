@@ -46,8 +46,8 @@ i{
 }
 
 /*tätä pitää vielä muokata*/
-#cardborder img{
-    border-radius: 1.0rem!important;
+#cards img{
+    border-radius: 0.9rem!important;
 }
 
 
