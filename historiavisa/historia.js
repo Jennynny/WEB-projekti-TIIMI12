@@ -98,8 +98,8 @@ submitBtn.addEventListener('click', () => {
        if(answer === quizData[currentQuiz].correct) {
            score++
        }
-
-       currentQuiz++
+//laskee monesko kysymys
+       currentQuiz++   
 
        if(currentQuiz < quizData.length) {
            loadQuiz()
