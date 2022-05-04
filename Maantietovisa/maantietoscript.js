@@ -245,8 +245,7 @@ function quizOver(){
     }
     else if(score <= 4){
         document.getElementById("teksti").innerHTML = "Osaat hienosti! ";
-        
-        
+          
     }
     else {
         document.getElementById("teksti").innerHTML = "Huippua! Kaikki vastaukset oikein! ";
