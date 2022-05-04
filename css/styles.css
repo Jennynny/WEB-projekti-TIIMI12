@@ -49,6 +49,7 @@ i{
 #cards img{
     border-radius: 0.9rem!important;
 }
+ca
 
 .indexbtn:hover{
     background-color: olivedrab;
@@ -56,3 +57,6 @@ i{
 
 
 
+#cards h4{
+    font-weight: bold;
+}

@@ -12,7 +12,7 @@ h2 {
 
 .info-container {
     font-family:'Prompt', sans-serif;
-    background-color:#f18973;
+    background-color:#ffa500;;
     padding-bottom: 4px;
     padding-top: 10px;
     margin-top: 15px;
@@ -41,7 +41,7 @@ h2 {
     margin-bottom: 20px;
 }
 .options div{
-    background-color: #f18973;
+    background-color: #1DBDE0;
     font-size: 20px;
     color: black;
     margin-bottom: 10px;
@@ -92,14 +92,14 @@ h2 {
 }
 .button .btn.btn-warning{
     font-family: 'Prompt', sans-serif;
-    font-weight: bold;
+    
 }
 
 .answers-tracker div{
     
     height: 40px;
     width: 40px;
-    background-color: rgb(124, 174, 214);
+    background-color: #1DBDE0;
     display: inline-block;
     border-radius: 50%;
     margin-right: 5px;
