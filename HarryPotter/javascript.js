@@ -1,6 +1,6 @@
 //Jonna Neulikko
 
-//Koodi poimituu sivutolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja muokattu tehtävän vaatimuksiin sopivaksi.
+//Koodi poimituu sivustolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja muokattu tehtävän vaatimuksiin sopivaksi.
 
 //Vakioidaan elementit
 const RESTART_BTN = document.getElementById("restart");
@@ -214,9 +214,9 @@ function submit() {
 
         let pic = document.createElement("IMG");
         pic.setAttribute("src", "images/harry-potter-cute.gif"); //Kuvan lähde https://tenor.com/view/harry-potter-cute-happy-gif-21913000
-        pic.setAttribute("width", "auto");
-        pic.setAttribute("height", "auto");
-        pic.setAttribute("alt", "Tylypahka");
+        //pic.setAttribute("width", "auto");
+        //pic.setAttribute("height", "auto");
+        //pic.setAttribute("alt", "Tylypahka");
 
         QUESTION_TEXT.innerHTML = "Hienoa, kaikki oikein!"; 
         document.getElementById("picture").appendChild(pic);}
