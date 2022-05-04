@@ -32,13 +32,14 @@
     font-family: 'Titan One', cursive;
 }
     .quiz-container{
-    background-color: #fff;
+    background-color: rgb(241, 183, 75);
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
     width: 60vw;
     max-width: 100%;
     overflow: hidden;
     justify-content: center;
+
   }
   .quiz-header{
     padding: 4rem;
@@ -75,6 +76,7 @@
     font-size: 1.1rem;
     font-family: inherit;
     padding: 1.3rem;
+    margin-bottom: 1rem;
   }
   
   button:focus{
