@@ -36,20 +36,11 @@ body {
  .score{
      font-size: large;
      font-weight: bold;
-     float: left;
  }
- 
- .col-8{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
- }
-
 
  .questions-amount {
      font-size: small;
-     display: block;
+     display: flex;
      height: 60px;
      width: 60px;
      line-height: 60px;
@@ -64,6 +55,10 @@ body {
 
  .row{
      display: contents;
+ }
+
+ .controls {
+     float: right;
  }
 
 
