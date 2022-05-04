@@ -12,16 +12,16 @@ h2 {
 
 .info-container {
     font-family:'Prompt', sans-serif;
-    background-color:#ffa500;;
+    background-color:#f18973;
     padding-bottom: 4px;
     padding-top: 10px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     
 }
 
 .quiz-container{
-    background-color:#e3eaa7;
+    background-color:#b5e7a0;
     padding-top: 20px;
     padding-bottom: 20px;
     
@@ -41,7 +41,7 @@ h2 {
     margin-bottom: 20px;
 }
 .options div{
-    background-color: #1DBDE0;
+    background-color: #A31F7C;
     font-size: 20px;
     color: black;
     margin-bottom: 10px;
@@ -99,7 +99,7 @@ h2 {
     
     height: 40px;
     width: 40px;
-    background-color: #1DBDE0;
+    background-color: #A31F7C;
     display: inline-block;
     border-radius: 50%;
     margin-right: 5px;
