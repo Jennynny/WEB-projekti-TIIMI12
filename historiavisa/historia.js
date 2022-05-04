@@ -113,87 +113,16 @@ submitBtn.addEventListener('click', () => {
            <button onclick="location.reload()">Alkuun</button>
            `
     } else{
+        
         quiz.innerHTML = `
            <h2>Mahtavaa kaikki oikein! Sait ${score}/${quizData.length} pistettä.</h2>
+           
            <button onclick="location.reload()">Alkuun</button>
            `
+           
+           
     }
+    
        }
      }
 })
-
-
-
-
-/*const questionText = document.getElementById("question-text");
-let reply="";
-questionText.innerHTML = reply;
-if(score <= 4) {
-    questionText.innerHTML = ""Hupsista jotain meni väärin. Tässä oikeat vastaukset:<br>"}
-    else{
-        questionText.innerHTML = "Hienoa, kaikki oikein!";
-    }*/
-
-
-/* ensimmäisen blockin näkyminen
-document.getElementsByClassName('quiz-container')[0].style.display = "block";
-
-//next nappulan määrittäminen
-function next(id) {
-    document.getElementsByClassName('quiz-container')[id-1].style.display = "none";
-    document.getElementsByClassName('quiz-container')[id].style.display = "block";
-}
-//tulosten laskenta
-function result() {
-    let score = 0;
-    let correct1 = document.getElementById("correct1");
-    let false1= document.getElementById("false1");
-    let false2 = document.getElementById("false2");
-    let false3 = document.getElementById("false3");
-    let false4 = document.getElementById("false4");
-    let answers= document.getElementById("answers");
-    if (document.getElementById('correct1').checked) {
-        score++;
-    } 
-    
-    if (document.getElementById('correct2').checked) {
-        score++;
-    }
-    if (document.getElementById('correct3').checked) {
-        score++;
-    }
-    if (document.getElementById('correct4').checked) {
-        score++;
-    } 
-     if (document.getElementById('correct5').checked) {
-        score++;
-    }  
-
-    if(score <= 4){
-        document.getElementById("answers").innerhtml = "Hupsista jotain meni väärin. Tässä oikeat vastaukset"
-    } else{
-        document.getElementById("answers").innerhtml ="Hienoa! Kaikki oikein!"
-    }
-    alert("Sait: "+ score +"/5 oikein");
-    //document.write("sait"+ score)
-}
-//Monesko kysymys
-let numberOfQuestion = 0;
-numberOfQuestion++;
-document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
-
-//oikeat vastauskset
-/*function v01(){
-let correct1 = document.getElementById("correct1");
-let false1= document.getElementById("false1");
-let false2 = document.getElementById("false2");
-let false3 = document.getElementById("false3");
-let false4 = document.getElementById("false4");
-let answers= document.getElementById("answers");
-
-if (correct1.checked){
-    document.getElementById("answers").innerhtml = correct1 + "Hienoa! Oikea vastaus.";}
-else {
-    document.getElementById("answers").innerhtml = false1+ false2 + false3+ false4 + "Harmi väärin meni. Oikea vastaus on Ramses";
-}
-}*/
