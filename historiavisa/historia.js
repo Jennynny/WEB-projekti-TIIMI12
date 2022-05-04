@@ -98,8 +98,8 @@ submitBtn.addEventListener('click', () => {
        if(answer === quizData[currentQuiz].correct) {
            score++
        }
-
-       currentQuiz++
+//laskee monesko kysymys
+       currentQuiz++   
 
        if(currentQuiz < quizData.length) {
            loadQuiz()
@@ -108,92 +108,21 @@ submitBtn.addEventListener('click', () => {
 
            quiz.innerHTML = `
            <h2>Hupsista jotain meni väärin. Sait ${score}/${quizData.length} pistettä. Tässä oikeat vastaukset:<br></h2><p> 1. Oikea vastaus on Ramses. Muut henkilöt ovat muinaisen Egyptin jumalia.<br> 2. Oikea vastaus on Ra. Bes oli naisten, perheen ja kotien jumala. Osiris oli manalan jumala ja Seth oli kaaoksenjumala.<br> 3.Oikea vastaus on Athene. Afrodite oli rakkauden ja kauneuden jumalatar. Hera oli ylijumala Zeuksen puoliso, avioliiton, naisten ja valtakuntien jumalatar. Selene oli Kuun jumalatar.<br>
-            4.Oikea vastaus Kreikasta. Olympian kisat eli ”antiikin olympialaiset” olivat antiikin kreikkalaiset Zeus-jumalan kunniaksi järjestetyt urheilukilpailut. Ne järjestettiin Olympian pyhäkköalueella Eliin maakunnassa Peloponnesoksen luoteisosassa.<br> 5.Oikea vastaus on Aristoteles. Homeros oli mahdollisesti myyttinen runoilija antiikin Kreikan muinaisajalla. Filippos II oli Aleksanterin isä. Antipatros oli yksi Filippoksen upseereista.</p>
+            4.Oikea vastaus on Kreikasta. Olympian kisat eli ”antiikin olympialaiset” olivat antiikin kreikkalaiset Zeus-jumalan kunniaksi järjestetyt urheilukilpailut. Ne järjestettiin Olympian pyhäkköalueella Eliin maakunnassa Peloponnesoksen luoteisosassa.<br> 5.Oikea vastaus on Aristoteles. Homeros oli mahdollisesti myyttinen runoilija antiikin Kreikan muinaisajalla. Filippos II oli Aleksanterin isä. Antipatros oli yksi Filippoksen upseereista.</p>
 
            <button onclick="location.reload()">Alkuun</button>
            `
     } else{
+        
         quiz.innerHTML = `
            <h2>Mahtavaa kaikki oikein! Sait ${score}/${quizData.length} pistettä.</h2>
+           
            <button onclick="location.reload()">Alkuun</button>
            `
-    }
-       }
+            }
+           
+        }
+    
      }
 })
 
-
-
-
-/*const questionText = document.getElementById("question-text");
-let reply="";
-questionText.innerHTML = reply;
-if(score <= 4) {
-    questionText.innerHTML = ""Hupsista jotain meni väärin. Tässä oikeat vastaukset:<br>"}
-    else{
-        questionText.innerHTML = "Hienoa, kaikki oikein!";
-    }*/
-
-
-/* ensimmäisen blockin näkyminen
-document.getElementsByClassName('quiz-container')[0].style.display = "block";
-
-//next nappulan määrittäminen
-function next(id) {
-    document.getElementsByClassName('quiz-container')[id-1].style.display = "none";
-    document.getElementsByClassName('quiz-container')[id].style.display = "block";
-}
-//tulosten laskenta
-function result() {
-    let score = 0;
-    let correct1 = document.getElementById("correct1");
-    let false1= document.getElementById("false1");
-    let false2 = document.getElementById("false2");
-    let false3 = document.getElementById("false3");
-    let false4 = document.getElementById("false4");
-    let answers= document.getElementById("answers");
-    if (document.getElementById('correct1').checked) {
-        score++;
-    } 
-    
-    if (document.getElementById('correct2').checked) {
-        score++;
-    }
-    if (document.getElementById('correct3').checked) {
-        score++;
-    }
-    if (document.getElementById('correct4').checked) {
-        score++;
-    } 
-     if (document.getElementById('correct5').checked) {
-        score++;
-    }  
-
-    if(score <= 4){
-        document.getElementById("answers").innerhtml = "Hupsista jotain meni väärin. Tässä oikeat vastaukset"
-    } else{
-        document.getElementById("answers").innerhtml ="Hienoa! Kaikki oikein!"
-    }
-    alert("Sait: "+ score +"/5 oikein");
-    //document.write("sait"+ score)
-}
-//Monesko kysymys
-let numberOfQuestion = 0;
-numberOfQuestion++;
-document.getElementById("numberofquestion").innerHTML= numberOfQuestion + "/5";
-
-//oikeat vastauskset
-/*function v01(){
-let correct1 = document.getElementById("correct1");
-let false1= document.getElementById("false1");
-let false2 = document.getElementById("false2");
-let false3 = document.getElementById("false3");
-let false4 = document.getElementById("false4");
-let answers= document.getElementById("answers");
-
-if (correct1.checked){
-    document.getElementById("answers").innerhtml = correct1 + "Hienoa! Oikea vastaus.";}
-else {
-    document.getElementById("answers").innerhtml = false1+ false2 + false3+ false4 + "Harmi väärin meni. Oikea vastaus on Ramses";
-}
-}*/

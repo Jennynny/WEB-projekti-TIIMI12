@@ -1,6 +1,6 @@
 //Jonna Neulikko
 
-//Koodi poimituu sivutolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja muokattu tehtävän vaatimuksiin sopivaksi.
+//Koodi poimituu sivustolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja muokattu tehtävän vaatimuksiin sopivaksi.
 
 //Vakioidaan elementit
 const RESTART_BTN = document.getElementById("restart");
@@ -13,6 +13,7 @@ const USER_SCORE = document.getElementById("user-score");
 const TOTAL_SCORE = document.getElementById("total-score");
 const QUESTION_TEXT = document.getElementById("question-text");
 const CURRENT_QUESTION_ELEMENT = document.getElementById("questions-number");
+const QUESTION_AMOUNT = document.getElementById("questionsAmount");
 
 
 //Asetetaan lähtöarvot kysymysten ja pisteiden määrälle
@@ -118,6 +119,7 @@ function beginQuiz(){
     //piilotetaan aloituksesta tarpeettomat nappulat
     SUBMIT_BTN.classList.add("hide");
     MAIN_MENU_BTN.classList.add("hide");
+    QUESTION_AMOUNT.classList.remove("hide");
 
     }
 beginQuiz();
@@ -196,6 +198,7 @@ function submit() {
     FALSE1_BTN.classList.add("hide");
     FALSE2_BTN.classList.add("hide");
     MAIN_MENU_BTN.classList.remove("hide");
+    QUESTION_AMOUNT.classList.add("hide");
 
 
     //Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
@@ -211,9 +214,9 @@ function submit() {
 
         let pic = document.createElement("IMG");
         pic.setAttribute("src", "images/harry-potter-cute.gif"); //Kuvan lähde https://tenor.com/view/harry-potter-cute-happy-gif-21913000
-        pic.setAttribute("width", "auto");
-        pic.setAttribute("height", "auto");
-        pic.setAttribute("alt", "Tylypahka");
+        //pic.setAttribute("width", "auto");
+        //pic.setAttribute("height", "auto");
+        //pic.setAttribute("alt", "Tylypahka");
 
         QUESTION_TEXT.innerHTML = "Hienoa, kaikki oikein!"; 
         document.getElementById("picture").appendChild(pic);}
@@ -221,7 +224,7 @@ function submit() {
 }
 //Vastaukset nappulan toiminto
 function showResults() {
-    SUBMIT_BTN.addEventListener(click,showResults);
+    SUBMIT_BTN.addEventListener(click, showResults);
 
 }
 

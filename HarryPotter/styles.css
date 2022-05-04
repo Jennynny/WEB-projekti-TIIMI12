@@ -20,7 +20,7 @@ body {
      font-size: 25px;
      width: 60vw;
      max-width: 100%;
-     background: orange;
+     background: #feb236;
      height: 100%;
      padding: 20px;
      margin-bottom: 30px;
@@ -32,13 +32,24 @@ body {
     /* text-align: -webkit-right; */
      align-items: center;
  }
+
+ .btn-warning {
+     background-color: #ff7b25;
+ }
+
+ .btn-info{
+     background-color: #d64161;
+     float: right;
+     width: auto;
+     padding: 10px;
+ }
  
  .score{
      font-size: large;
      font-weight: bold;
  }
 
- .questions-amount {
+ #questionsAmount {
      font-size: small;
      display: flex;
      height: 60px;
@@ -48,11 +59,22 @@ body {
      -moz-border-radius: 30px; /* or 50% */
      border-radius: 30px; /* or 50% */
  
-     background-color:  #1DBDE0;
+     background-color: #b9936c;
      text-align: center;
      width: fit-content;
+
+     float: left;
+     width: auto;
  }
 
+ #question-text{
+     font-size: 30px;
+     padding: 10px;
+ }
+
+ #questionsAmount:hover{
+     background-color: orange;
+ }
  .row{
      display: contents;
  }
@@ -60,6 +82,8 @@ body {
  .controls {
      float: right;
  }
+
+
 
 
  .hide{
