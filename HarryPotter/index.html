@@ -59,7 +59,9 @@
     </div>
   </nav>
 
+<!-- Quiz content-->
 
+<h1> Harry Potter -tietovisa</h1>
 <div class="container-md">
   <div class="col" id="question-area">
     <div id="question-text"></div>
@@ -72,20 +74,21 @@
     </div>
   </div>
 
-  <div class="col" id="picture"></div>
+  <div class="col img-fluid" id="picture"></div>
 
-  <div class="score align-items-center mt-3">
+  <div class="score align-items-center mt-3 p-3">
     Pisteet: <span id="user-score">0</span>
     / <span id="total-score"></span>
   </div>
+  <div class="row-md-3"> <img src="images/harry_potter broom.gif" class="img-fluid rounded-start rounded-end" width="25%" alt="..."></div> <!--kuvan linkki: https://dribbble.com/shots/6870633-Harry-Potter-->
 
  <div class="row">
-        <div class="controls col-md-8">
-            <button type="button" class="btn btn-info mt-5" id="restart">Aloita alusta</button>
-            <button type="button" class="btn btn-info mt-5" id="submit">Valmista tuli!</button>
-            <button type="button" class="btn btn-info mt-5" id="mainmenu">Takaisin päävalikkoon</button>
+        <div class="controls col-md-3">
+            <button type="button" class="btn btn-info mt-3 mx-2" id="restart">Aloita alusta</button>
+            <button type="button" class="btn btn-info mt-3 mx-2" id="submit">Valmista tuli!</button>
+            <button type="button" class="btn btn-info mt-3 mx-2" id="mainmenu">Takaisin päävalikkoon</button>
         </div>
-        <div class="questions-amount col-md-4 mt-3">Kysymys: <span id="questions-number">1</span> / 5 </div>
+        <div class="questions-amount col-md-3 mt-3" id="questionsAmount">Kysymys: <span id="questions-number">1</span> /5 </div>
       </div>
     
 </div>
