@@ -50,5 +50,9 @@ i{
     border-radius: 0.9rem!important;
 }
 
+.indexbtn:hover{
+    background-color: olivedrab;
+}
+
 
 
