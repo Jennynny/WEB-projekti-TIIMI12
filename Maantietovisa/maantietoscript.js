@@ -72,7 +72,7 @@ const questions = [  //20 kysymystä, joista 5 arvotaan visaan randongeneraattor
         answer:1
     },
     {
-        q:' Minkä maalaista ruokaa Sushi on?',
+        q:' Minkä maalaista ruokaa on Sushi?',
         options: ['Japanilaista', 'Kiinalaista', 'Unkarilaista', 'Turkkilaista'],
         answer:0
     },  
@@ -102,9 +102,9 @@ const questions = [  //20 kysymystä, joista 5 arvotaan visaan randongeneraattor
         answer:1
     },
     {
-        q:' Mistä maasta tulee K-Pop musiikki?',
-        options: ['Pohjois-Koreasta', 'Japanista', 'Etelä-Koreasta', 'Suomesta'],
-        answer:2
+        q:' Missä sijaitsee maailman suurin aavikko Sahara?',
+        options: ['Etelä-Afrikassa', 'Pohjois-Amerikassa', 'Etelä-Amerikassa', 'Pohjois-Afrikassa'],
+        answer:3
     },         
     {
         q:' Mikä on Kreikan pääkaupunki?',
