@@ -17,6 +17,7 @@ let index = 0;
 let answeredQuestions =[]; // array of anwered question indexes Vastatut kysymykset
 let score = 0;
 
+
 const opt1 = document.getElementById("0");
 const opt2 = document.getElementById("1");
 const opt3 = document.getElementById("2");
@@ -242,6 +243,8 @@ function quizOver(){
     }
     else if(score <= 4){
         document.getElementById("teksti").innerHTML = "Osaat hienosti! ";
+        
+        
     }
     else {
         document.getElementById("teksti").innerHTML = "Huippua! Tiesit kaikkiin kysymyksiin oikean vastauksen! ";
