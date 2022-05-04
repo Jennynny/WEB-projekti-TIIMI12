@@ -67,6 +67,11 @@ body {
      width: auto;
  }
 
+ #question-text{
+     font-size: 30px;
+     padding: 10px;
+ }
+
  #questionsAmount:hover{
      background-color: orange;
  }
