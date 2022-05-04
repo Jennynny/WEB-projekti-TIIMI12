@@ -1,4 +1,6 @@
+//Lainasin verkosta koodia, jota olen muokannut tehtävään sopivaksi:
 // https://www.kindsonthegenius.com/javascript/quiz-application-in-javascript-with-validation-step-by-step/
+
 
 //vakiot //querySelectorilla classit vakioiksi ja getElementByIdllä id:t vakioiksi
 const aTracker = document.querySelector(".answers-tracker")
@@ -17,12 +19,13 @@ let index = 0;
 let answeredQuestions =[]; // array of anwered question indexes Vastatut kysymykset
 let score = 0;
 
+
 const opt1 = document.getElementById("0");
 const opt2 = document.getElementById("1");
 const opt3 = document.getElementById("2");
 const opt4 = document.getElementById("3");
 
-const questions = [  //17 kysymystä, joista 5 arvotaan visaan randongeneraattorilla.
+const questions = [  //20 kysymystä, joista 5 arvotaan visaan randongeneraattorilla.
     {
         q:' Mistä kaupungista löytyy Eiffel-torni?',
         options: ['Berliinistä', 'Roomasta', 'Pariisista', 'Madridista'],
@@ -238,13 +241,15 @@ function quizOver(){
         document.getElementById("teksti").innerHTML = "Hupsista.. kokeillaanko uudelleen? ";
     }
     else if(score < 3){
-        document.getElementById("teksti").innerHTML = "Hyvin menee. Kokeillaanko uudelleen? ";
+        document.getElementById("teksti").innerHTML = "Hyvin menee! Kokeillaanko uudelleen? ";
     }
     else if(score <= 4){
         document.getElementById("teksti").innerHTML = "Osaat hienosti! ";
+        
+        
     }
     else {
-        document.getElementById("teksti").innerHTML = "Huippua! Tiesit kaikkiin kysymyksiin oikean vastauksen! ";
+        document.getElementById("teksti").innerHTML = "Huippua! Kaikki vastaukset oikein! ";
     }
     document.querySelector(".quiz-over").classList.add("show")
     correctAnswers.innerHTML = score;
@@ -256,4 +261,8 @@ function quizOver(){
 //aloita alusta
 function tryAgain(){
     window.location.reload();
+}
+//Päävalikko-nappulan toiminto
+function frontpage() {
+    location.href="../index.html";
 }
