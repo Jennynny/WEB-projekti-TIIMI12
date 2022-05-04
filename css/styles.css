@@ -12,6 +12,9 @@ h1 {
 body { 
     background-color:#0D5161;
 }
+.navbar{
+    font-family:'Titan One', cursive;
+}
 .navbar-collapse {
     background-color: #1DBDE0;
 }
@@ -42,6 +45,10 @@ i{
     font-family: 'Titan One', cursive;
 }
 
+/*tätä pitää vielä muokata*/
+#cards img{
+    border-radius: 0.9rem!important;
+}
 
 
 

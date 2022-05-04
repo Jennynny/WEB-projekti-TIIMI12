@@ -1,4 +1,6 @@
+//Lainasin verkosta koodia, jota olen muokannut tehtävään sopivaksi:
 // https://www.kindsonthegenius.com/javascript/quiz-application-in-javascript-with-validation-step-by-step/
+
 
 //vakiot //querySelectorilla classit vakioiksi ja getElementByIdllä id:t vakioiksi
 const aTracker = document.querySelector(".answers-tracker")
@@ -11,69 +13,71 @@ const totalQuestions2 = document.querySelector(".total-questions2")
 const percentage = document.querySelector(".percentage")
 const maxQuestions = 5; //Tällä rajataan kysyttävien kysymysten määrä viiteen.
 
+
 let currentIndex;
 let index = 0;
 let answeredQuestions =[]; // array of anwered question indexes Vastatut kysymykset
 let score = 0;
+
 
 const opt1 = document.getElementById("0");
 const opt2 = document.getElementById("1");
 const opt3 = document.getElementById("2");
 const opt4 = document.getElementById("3");
 
-const questions = [  //17 kysymystä, joista 5 arvotaan visaan randongeneraattorilla.
+const questions = [  //20 kysymystä, joista 5 arvotaan visaan randongeneraattorilla.
     {
         q:' Mistä kaupungista löytyy Eiffel-torni?',
-        options: ['Berliini', 'Rooma', 'Pariisi', 'Madrid'],
+        options: ['Berliinistä', 'Roomasta', 'Pariisista', 'Madridista'],
         answer:2
     },
     {
         q:' Missä maanosassa virtaa Niili?',
-        options: ['Etelä-Amerikka', 'Afrikka', 'Eurooppa', 'Aasia'],
+        options: ['Etelä-Amerikassa', 'Afrikassa', 'Euroopassa', 'Aasiassa'],
         answer:1
     },  
     {
         q:' Missä maailman kaupungissa on suurin asukasluku?',
-        options: ['Moskova', 'São Paulo', 'Delhi', 'Tokio'],
+        options: ['Moskovassa', 'São Paulossa', 'Delhissä', 'Tokiossa'],
         answer:3
     },
     {
         q:' Missä kaupungissa sijaitsee huvipuisto Linnamäki?',
-        options: ['Turku', 'Tampere', 'Helsinki', 'Jyväskylä'],
+        options: ['Turkussa', 'Tampereella', 'Helsingissä', 'Jyväskylässä'],
         answer:2
     },     
     {
         q:' Minkä maan pääkaupunki on Kiev?',
-        options: ['Valko-Venäjä', 'Puola', 'Ukraina', 'Latvia'],
+        options: ['Valko-Venäjän', 'Puolan', 'Ukrainan', 'Latvian'],
         answer:2
     },    
     {
         q:' Mistä maasta löytyy Taj Mahal?',
-        options: ['Intia', 'Kiina', 'Pakistan', 'Indonesia'],
+        options: ['Intiasta', 'Kiinasta', 'Pakistanista', 'Indonesiasta'],
         answer:0
     },
     {
         q:' Missä maanosassa on Amazonin sademetsä?',
-        options: ['Aasia', 'Eurooppa', 'Pohjois-Amerikka', 'Etelä-Amerikka'],
+        options: ['Aasiassa', 'Euroopassa', 'Pohjois-Amerikassa', 'Etelä-Amerikassa'],
         answer:3
     }, 
     {
         q:' Mistä kaupungista löytyy kaupunginosa Manhattan?',
-        options: ['Lontoo', 'San Francisco', 'New York', 'Reykjavík'],
+        options: ['Lontoosta', 'San Franciscosta', 'New Yorkista', 'Reykjavíkista'],
         answer:2
     },
     {
         q:' Minkä maan kaupunkeja ovat Berliini, Köln ja Hampuri?',
-        options: ['Ruotsissa', 'Saksa', 'Hollanti', 'Belgiassa'],
+        options: ['Ruotsin', 'Saksan', 'Hollannin', 'Belgian'],
         answer:1
     },
     {
         q:' Minkä maalaista ruokaa Sushi on?',
-        options: ['Japani', 'Kiina', 'Unkari', 'Turkki'],
+        options: ['Japanilaista', 'Kiinalaista', 'Unkarilaista', 'Turkkilaista'],
         answer:0
     },  
     {
-        q:' Norjan pääkaupunki?',
+        q:' Mikä on Norjan pääkaupunki?',
         options: ['Oslo', 'Tukholma', 'Kööpenhamina', 'Helsinki'],
         answer:0
     },
@@ -84,27 +88,42 @@ const questions = [  //17 kysymystä, joista 5 arvotaan visaan randongeneraattor
     },
     {
         q:' Missä kaupungissa on Big Ben ja Buckinghamin palatsi?',
-        options: ['Leeds', 'Lontoo', 'Liverpool', 'Glasgow'],
+        options: ['Leedsissä', 'Lontoossa', 'Liverpoolissa', 'Glasgowssa'],
         answer:1
     },
     {
         q:' Missä sijaitsee Yellowstone kansallispuisto?',
-        options: ['Yhdysvallat', 'Etelä Afrikka', 'Kanada', 'Venäjä'],
+        options: ['Yhdysvalloissa', 'Etelä Afrikassa', 'Kanadassa', 'Venäjällä'],
         answer:0
     },
     {
         q:' Minkä maan tunnusomaisimpia eläimiä ovat Kengurut?',
-        options: ['Kiina', 'Austaralia', 'Japani', 'Uusi-Seelanti'],
+        options: ['Kiinan', 'Austaralian', 'Japanin', 'Uuden Seelannin'],
         answer:1
     },
     {
         q:' Mistä maasta tulee K-Pop musiikki?',
-        options: ['Pohjois-Korea', 'Japani', 'Etelä-Korea', 'Suomi'],
+        options: ['Pohjois-Koreasta', 'Japanista', 'Etelä-Koreasta', 'Suomesta'],
         answer:2
     },         
     {
         q:' Mikä on Kreikan pääkaupunki?',
         options: ['Moskova', 'Tukholma', 'Ateena', 'Bangkok'],
+        answer:2
+    },
+    {
+        q:' Minkä maan pääkaupunki on Reykjavík?',
+        options: ['Islannin', 'Norjan', 'Tanskan', 'Ruotsin'],
+        answer:0
+    },
+    {
+        q:' Mikä on maailman korkein vuoristo?',
+        options: ['Rukatunturi', 'Mount Everest', 'K2', 'Korvatunturi'],
+        answer:1
+    },
+    {
+        q:' Mistä maasta isopandat ovat kotoisin?',
+        options: ['Suomesta', 'Kanadasta', 'Kiinasta', 'Islannista'],
         answer:2
     }
 ]
@@ -222,22 +241,27 @@ function quizOver(){
         document.getElementById("teksti").innerHTML = "Hupsista.. kokeillaanko uudelleen? ";
     }
     else if(score < 3){
-        document.getElementById("teksti").innerHTML = "Hyvin menee. Kokeillaanko uudelleen? + ";
+        document.getElementById("teksti").innerHTML = "Hyvin menee! Kokeillaanko uudelleen? ";
     }
     else if(score <= 4){
         document.getElementById("teksti").innerHTML = "Osaat hienosti! ";
+          
     }
     else {
-        document.getElementById("teksti").innerHTML = "Huippua! Tiesit kaikkiin kysymyksiin oikean vastauksen! ";
+        document.getElementById("teksti").innerHTML = "Huippua! Kaikki vastaukset oikein! ";
     }
     document.querySelector(".quiz-over").classList.add("show")
     correctAnswers.innerHTML = score;
     totalQuestions2.innerHTML = maxQuestions
     percentage.innerHTML=Math.round((score/maxQuestions)*100) + "%"
-
+    
     
 }
 //aloita alusta
 function tryAgain(){
     window.location.reload();
+}
+//Päävalikko-nappulan toiminto
+function frontpage() {
+    location.href="../index.html";
 }

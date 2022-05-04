@@ -4,34 +4,32 @@
 @import url("'https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto+Mono&display=swap'");
 
 
-*{
+/*{
      margin:0;
-     padding: 0;
-    }
+     padding: 0; */
+    
  
- body {
+body {
      align-items: center;
      justify-content: center;
- }
+ } 
 
- 
  
  .container-md{
      font-family: "Fontdiner swanky";
      font-size: 25px;
      width: 60vw;
      max-width: 100%;
-     background-color: #ff9933;
-     height: auto;
+     background: orange;
+     height: 100%;
      padding: 20px;
      margin-bottom: 30px;
      /*box-shadow: 0 0 5px 4 px;*/
-     display: flex;
-     flex-direction: column;
      justify-content: center;
      align-items: center;
      border-radius: 8px;
      text-align: center;
+    /* text-align: -webkit-right; */
      align-items: center;
  }
  
@@ -39,13 +37,30 @@
      font-size: large;
      font-weight: bold;
  }
- 
- .col-8{
+
+ .questions-amount {
+     font-size: small;
      display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
+     height: 60px;
+     width: 60px;
+     line-height: 60px;
+ 
+     -moz-border-radius: 30px; /* or 50% */
+     border-radius: 30px; /* or 50% */
+ 
+     background-color:  #1DBDE0;
+     text-align: center;
+     width: fit-content;
  }
+
+ .row{
+     display: contents;
+ }
+
+ .controls {
+     float: right;
+ }
+
 
  .hide{
      display: none;

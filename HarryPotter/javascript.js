@@ -3,7 +3,6 @@
 //Koodi poimituu sivutolta https://www.codingninjas.com/blog/2020/11/03/how-to-create-a-quiz-in-javascript/ ja muokattu tehtävän vaatimuksiin sopivaksi.
 
 //Vakioidaan elementit
-
 const RESTART_BTN = document.getElementById("restart");
 const SUBMIT_BTN = document.getElementById("submit");
 const MAIN_MENU_BTN = document.getElementById("mainmenu");
@@ -21,7 +20,7 @@ let currentQuestion = 0;
 let score = 0;
 
 
-//Luodaan kysymykset ja vastaukset
+//Luodaan kysymykset ja vastaukset sekä määritellään ovatko oikein/väärin
 let questions = [
     {
         question: "1. Minkä muotoinen on Harryn otsassa oleva arpi?",
@@ -71,7 +70,7 @@ SUBMIT_BTN.addEventListener("click", submit);
 MAIN_MENU_BTN.addEventListener("click", main);
 
 
-//Aloitetaan kysely
+//Aloitetaan kysely ja määritellään pistelasku oikeiden vastausten mukaan.
 function beginQuiz(){
     currentQuestion = 0;
 
@@ -121,8 +120,6 @@ function beginQuiz(){
     MAIN_MENU_BTN.classList.add("hide");
 
     }
-
-
 beginQuiz();
 
 //Aloita alusta nappulan toiminto
@@ -142,11 +139,11 @@ function restart(){
 function next(){
     currentQuestion++;
 
-    if(currentQuestion >= 5){
+    if(currentQuestion >= 4){
         SUBMIT_BTN.classList.remove("hide");
     }
 
-    CURRENT_QUESTION_ELEMENT.innerHTML = currentQuestion+1;
+    CURRENT_QUESTION_ELEMENT.innerHTML = currentQuestion+1; //Laskee kysymysten määrän
     QUESTION_TEXT.innerHTML = questions[currentQuestion].question;
     TRUE_BTN.innerHTML = questions[currentQuestion].answers[0].option;
     TRUE_BTN.onclick = () => {
@@ -202,24 +199,24 @@ function submit() {
 
 
     //Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
-
     QUESTION_TEXT.innerHTML = reply;
 
+    //4 pistettä tai sen alle > näyttää silloin oikeat vastaukset palautteena
     if(score <= 4) {
-
         QUESTION_TEXT.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
                                     + "3. RON JA HERMIONE ovat Harryn parhaat ystävät <br>" + "4. Velhomaailman suosittu urheilulaji on HUISPAUS <br>" + "5. Harryn lemmikki Hedwig on TUNTURIPÖLLÖ"}
         else{ 
+    //Täydet pisteet > kuva ja onnittelut
         RESTART_BTN.classList.add("hide");
 
         let pic = document.createElement("IMG");
-        pic.setAttribute("src", "images/tylypahka.jpg");
+        pic.setAttribute("src", "images/harry-potter-cute.gif"); //Kuvan lähde https://tenor.com/view/harry-potter-cute-happy-gif-21913000
         pic.setAttribute("width", "auto");
         pic.setAttribute("height", "auto");
         pic.setAttribute("alt", "Tylypahka");
 
-            QUESTION_TEXT.innerHTML = "Hienoa, kaikki oikein!"; 
-            document.getElementById("picture").appendChild(pic);}
+        QUESTION_TEXT.innerHTML = "Hienoa, kaikki oikein!"; 
+        document.getElementById("picture").appendChild(pic);}
 
 }
 //Vastaukset nappulan toiminto

@@ -42,3 +42,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 4px;
 }
+
+@media screen and (max-width: 992px) {
+    .hawk{ 
+        display:none;
+    }
+  }

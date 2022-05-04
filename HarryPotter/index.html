@@ -61,34 +61,34 @@
 
 
 <div class="container-md">
-  <link href='https://fonts.googleapis.com/css?family=Fontdiner Swanky' rel="stylesheet">
   <div class="col" id="question-area">
     <div id="question-text"></div>
-</div>
+  </div>
+<div class="row">
     <div class="options">
-      <button type="button" class="btn btn-warning btn-lg my-3 mx-2" id="True">True</button>
-      <button type="button" class="btn btn-warning btn-lg my-3 mx-2" id="False1">False1</button>
-      <button type="button" class="btn btn-warning btn-lg my-3 mx-2" id="False2">False2</button>
+      <button type="button" class="btn btn-warning btn-lg mt-5 mx-2" id="True">True</button>
+      <button type="button" class="btn btn-warning btn-lg mt-5 mx-2" id="False1">False1</button>
+      <button type="button" class="btn btn-warning btn-lg mt-5 mx-2" id="False2">False2</button>
+    </div>
   </div>
 
-  <div id="picture"></div>
+  <div class="col" id="picture"></div>
 
-  <div class="score mt-3">
+  <div class="score align-items-center mt-3">
     Pisteet: <span id="user-score">0</span>
     / <span id="total-score"></span>
   </div>
 
-  <div class="controls">
-    <button type="button" class="btn btn-info mt-5" id="restart">Aloita alusta</button>
-    <button type="button" class="btn btn-info mt-5" id="submit">Valmista tuli!</button>
-    <button type="button" class="btn btn-info mt-5" id="mainmenu">Takaisin päävalikkoon</button>
-
-  </div>
-
-  <div class="questions-amount">Kysymys: <span id="questions-number">1</span> / 5</div>
- 
+ <div class="row">
+        <div class="controls col-md-8">
+            <button type="button" class="btn btn-info mt-5" id="restart">Aloita alusta</button>
+            <button type="button" class="btn btn-info mt-5" id="submit">Valmista tuli!</button>
+            <button type="button" class="btn btn-info mt-5" id="mainmenu">Takaisin päävalikkoon</button>
+        </div>
+        <div class="questions-amount col-md-4 mt-3">Kysymys: <span id="questions-number">1</span> / 5 </div>
+      </div>
+    
 </div>
-
 
 
   <!-- Add footer -->
@@ -103,7 +103,7 @@
         <li class="nav-item">OAMK TIK22KM  </li>
       </ul>
       <ul class="nav md-4 justify-content-end text-muted">
-        <li class="nav-item">Aila-Maria Lintula, Jonna Neulikko, Jenny Kari ja Enni Kelloniemi</li>
+        <li class="nav-item">Jonna Neulikko</li>
       </ul>
    </footer>
   </div>

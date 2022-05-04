@@ -66,12 +66,12 @@
     <div class="info-container container-md rounded-start rounded-end ">
         <div class = "row">
             <div class = "col text-center">
-        <h3> Tervetuloa maantietovisaan!</h3>
+        <h3> Tervetuloa!</h3>
         
-        <p>- Lue kysymys ja valitse vastaus, jonka jälkeen paina 'seuraava' näppäintä.</p>
-        <p>- Vihreä = oikea vastaus / Punainen = väärä vastaus.</p>
-        <p>- Kun olet vastannut viiteen kysymykseen, näet ruudulla moneenko kysymykseen vastasit oikein.</p>
-        <p>- Painamalla 'Aloita alusta', pääset aloittamaan maantietovisan alusta vaihtuvin kysymyksin.</p>
+        <p> Lue kysymys ja valitse vastaus, jonka jälkeen paina 'seuraava' näppäintä.</p>
+        <p> Vihreä = oikea vastaus / Punainen = väärä vastaus.</p>
+        <p> Kun olet vastannut viiteen kysymykseen, näet ruudulla moneenko kysymykseen vastasit oikein.</p>
+        <p> Painamalla 'Aloita alusta', pääset kokeilemaan visaa vaihtuvien kysymyksien kanssa uudelleen.</p>
 
         
         </div>
@@ -107,12 +107,14 @@
         <div class="box"> <!--Box ilmestyy kun visa ohi. Ilmoittaa montako meni oikein kaikista kysymyksistä ja monta % oikein. Lopussa Aloita alusta näppäin-->
             <div> <h1 id = "teksti"></h1> </div> <br /> <!--<h1>Hienosti meni!</h1> tämä otettu pois div sisältä-->
             <!--<div class="tenor-gif-embed" data-postid="19818615" data-share-method="host" data-aspect-ratio="0.859375" data-width="50%"></div> -->
-               <h3> Sait <span class="correct-answers"></span> / 
-                <span class="total-questions2"></span> oikeita vastauksia. <br>
-                Se on <span class="percentage"> </span> oikein. <br>
+               <h3> Tiesit kysymyksistä <span class="correct-answers"></span> / 
+                <span class="total-questions2"></span> oikein. <br>
+                Se on <span class="percentage"> </span>  <br>
                 ..
                 </h3>
-           <div> <button type="button" class="btn btn-warning btn-lg mt-3" onclick="tryAgain()">Aloita alusta!</button> </div>
+                <img src="images/toinen_maapallo.gif" class="img-fluid" alt="...">
+           <div> <button type="button" class="btn btn-warning btn-lg mt-3" onclick="tryAgain()">  Aloita alusta!  </button> </div>
+           <div> <button type="button" class="btn btn-primary btn-lg mt-3" onclick="frontpage()">Takaisin etusivulle</button> </div>
         </div>
     </div>
     <script src="maantieto.js"></script>
@@ -129,7 +131,7 @@
         <li class="nav-item">OAMK TIK22KM  </li>
       </ul>
       <ul class="nav md-4 justify-content-end text-muted">
-        <li class="nav-item">Aila-Maria Lintula, Jonna Neulikko, Jenny Kari ja Enni Kelloniemi</li>
+        <li class="nav-item">Jenny Kari</li>
       </ul>
    </footer>
   </div>
