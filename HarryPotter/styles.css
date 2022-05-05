@@ -2,11 +2,6 @@
 
 /* Oman visailun fontti*/
 @import url("'https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto+Mono&display=swap'");
-
-
-/*{
-     margin:0;
-     padding: 0; */
     
  
 body {
@@ -24,17 +19,19 @@ body {
      height: 100%;
      padding: 20px;
      margin-bottom: 30px;
-     /*box-shadow: 0 0 5px 4 px;*/
      justify-content: center;
      align-items: center;
      border-radius: 8px;
      text-align: center;
-    /* text-align: -webkit-right; */
      align-items: center;
  }
 
  .btn-warning {
      background-color: #ff7b25;
+ }
+
+ .btn-warning:hover {
+     background-color: #f0ad4e;
  }
 
  .btn-info{
@@ -43,6 +40,10 @@ body {
      width: auto;
      padding: 10px;
  }
+
+ .btn-info:hover {
+    background-color: #5bc0de;
+}
  
  .score{
      font-size: large;
@@ -81,6 +82,12 @@ body {
 
  .controls {
      float: right;
+ }
+
+ #picture{
+    max-width: 100%;
+    height: auto;
+
  }
 
 

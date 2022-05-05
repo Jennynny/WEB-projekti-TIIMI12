@@ -14,7 +14,7 @@ const TOTAL_SCORE = document.getElementById("total-score");
 const QUESTION_TEXT = document.getElementById("question-text");
 const CURRENT_QUESTION_ELEMENT = document.getElementById("questions-number");
 const QUESTION_AMOUNT = document.getElementById("questionsAmount");
-
+const IMG = document.getElementById("HarryP");
 
 //Asetetaan lähtöarvot kysymysten ja pisteiden määrälle
 let currentQuestion = 0;
@@ -75,8 +75,10 @@ MAIN_MENU_BTN.addEventListener("click", main);
 function beginQuiz(){
     currentQuestion = 0;
 
-    TOTAL_SCORE.innerHTML = questions.length;
-    QUESTION_TEXT.innerHTML = questions[currentQuestion].question;
+    TOTAL_SCORE.innerHTML = questions.length; // Määrittelee kokonaispisteet kysymysten määrän mukaan
+    QUESTION_TEXT.innerHTML = questions[currentQuestion].question; //Poimii kysymyksen näkyviin
+
+    //Lisää pisteet sen mukaan onko vastaus oikea vai väärä
     TRUE_BTN.innerHTML = questions[currentQuestion].answers[0].option;
     TRUE_BTN.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
@@ -115,14 +117,16 @@ function beginQuiz(){
         if(currentQuestion <5) { 
             next();
         }
+
     }
+
     //piilotetaan aloituksesta tarpeettomat nappulat
     SUBMIT_BTN.classList.add("hide");
     MAIN_MENU_BTN.classList.add("hide");
     QUESTION_AMOUNT.classList.remove("hide");
-
     }
 beginQuiz();
+
 
 //Aloita alusta nappulan toiminto
 function restart(){
@@ -146,7 +150,9 @@ function next(){
     }
 
     CURRENT_QUESTION_ELEMENT.innerHTML = currentQuestion+1; //Laskee kysymysten määrän
-    QUESTION_TEXT.innerHTML = questions[currentQuestion].question;
+    QUESTION_TEXT.innerHTML = questions[currentQuestion].question; //Poimii kysymyksen näkyviin.
+
+    //Määrittelee vastaus-nappuloiden toiminnut
     TRUE_BTN.innerHTML = questions[currentQuestion].answers[0].option;
     TRUE_BTN.onclick = () => {
         if(questions[currentQuestion].answers[0].answer){
@@ -204,18 +210,20 @@ function submit() {
     //Määritellään palaute pisteiden mukaan ja näytetään oikeat vastaukset
     QUESTION_TEXT.innerHTML = reply;
 
-    //4 pistettä tai sen alle > näyttää silloin oikeat vastaukset palautteena
+    //4 pistettä tai sen alle > näyttää pistemäärän ja kysymysten oikeat vastaukset palautteena
     if(score <= 4) {
-        QUESTION_TEXT.innerHTML = "Harmi, osa vastauksista meni väärin. Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
+        QUESTION_TEXT.innerHTML = "Sait " + USER_SCORE.innerText + "/" + TOTAL_SCORE.innerText + " pistettä."+ "<br>" + "Ohessa oikeat vastaukset:<br>" + "1. Harry Potterin otsassa on SALAMAn muotoinen arpi <br>" + "2. Yksi Tylypahkan neljästä tuvasta on KORPINKYNSI <br>"
                                     + "3. RON JA HERMIONE ovat Harryn parhaat ystävät <br>" + "4. Velhomaailman suosittu urheilulaji on HUISPAUS <br>" + "5. Harryn lemmikki Hedwig on TUNTURIPÖLLÖ"}
         else{ 
     //Täydet pisteet > kuva ja onnittelut
         RESTART_BTN.classList.add("hide");
+        IMG.classList.add("hide");
 
+        //Kuvan koodi https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_img_create
         let pic = document.createElement("IMG");
         pic.setAttribute("src", "images/harry-potter-cute.gif"); //Kuvan lähde https://tenor.com/view/harry-potter-cute-happy-gif-21913000
-        //pic.setAttribute("width", "auto");
-        //pic.setAttribute("height", "auto");
+        pic.setAttribute("max-width", "304");
+        pic.setAttribute("height", "228");
         //pic.setAttribute("alt", "Tylypahka");
 
         QUESTION_TEXT.innerHTML = "Hienoa, kaikki oikein!"; 
