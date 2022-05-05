@@ -33,7 +33,6 @@ function questionInput (number1, number2){
 //Funktio tarkistaa onko tulos oikein ja syöttää sen näytölle. Jos kysymyksiä on kysytty 5, "näytä pisteet" nappula tulee esiin
 function checkAnswer(){
     let userAnswer = Number(document.getElementById("answer").value);
-    console.log("Kysymys:" + questionNumber)
     if (userAnswer == task){
         score++;
         document.getElementById("placeOfAnswer").innerHTML= "Vastasit oikein!";
@@ -49,13 +48,10 @@ function checkAnswer(){
         document.getElementById("buttonnext").style.display='none';  
         document.getElementById("scorebutton2").disabled = false; 
     }
-    console.log(userAnswer)
-    console.log(task + "task")
-    console.log(score + " score")
     return score
 }
 
-//Katsoo kuinka monta pistettä on ja sen mukaan tulostaa kuvan näytölle. Piilottaa question boksin ja "näytä pistee" painikkeen.
+//Katsoo kuinka monta pistettä on ja sen mukaan tulostaa kuvan näytölle. Piilottaa question boksin ja "näytä pisteet" painikkeen.
 function showScore() {
     const para = document.createElement("p");
     const image = document.createElement("img");
@@ -119,8 +115,6 @@ function reload(){
     number1 = getRndInteger(1, 10)
     number2 = getRndInteger(1, 10)
     task = number1 * number2;
-
-    console.log("qn" + typeof questionNumber)
     
     if(questionNumber < 5){
         //Funktio syöttää kysymyksen näytölle ja vastauslomake aktivoituu
@@ -133,7 +127,6 @@ function reload(){
     questionNumber++;
     document.getElementById("numberofquestion").innerHTML= "Kertolasku " + questionNumber + "/5";
     document.getElementById("buttonnext").disabled = true;
-    console.log("task:" + task);
     return task;
     }
 
