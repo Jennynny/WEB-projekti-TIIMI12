@@ -16,7 +16,7 @@ const maxQuestions = 5; //Tällä rajataan kysyttävien kysymysten määrä viit
 
 let currentIndex;
 let index = 0;
-let answeredQuestions =[]; // array of anwered question indexes Vastatut kysymykset
+let answeredQuestions =[]; // array Vastatut kysymykset
 let score = 0;
 
 
