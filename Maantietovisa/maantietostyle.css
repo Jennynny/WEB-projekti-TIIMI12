@@ -133,9 +133,9 @@ h2 {
     justify-content: center;
 }
 
-/*.show{
+.show{
     display:flex;
-}  tällä vetää burgerin valikon tekstin sivuun*/
+}  
 
 .quiz-over .box{
     font-family: 'Prompt', sans-serif;
